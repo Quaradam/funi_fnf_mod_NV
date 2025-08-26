@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="tyr-lake.png">
+<SubTexture name="tyr-lake flow0000" x="0" y="1586" width="2400" height="790" frameX="0" frameY="-910" frameWidth="2400" frameHeight="1700" />
+<SubTexture name="tyr-lake flow0001" x="0" y="0" width="2400" height="795" frameX="0" frameY="-905" frameWidth="2400" frameHeight="1700" />
+<SubTexture name="tyr-lake flow0002" x="0" y="795" width="2400" height="791" frameX="0" frameY="-909" frameWidth="2400" frameHeight="1700" />
+</TextureAtlas>
