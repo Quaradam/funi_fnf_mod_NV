@@ -1,3 +1,10 @@
+// QRDM was here too
+var speed:Int = 4;
+var zoom:Float = 1;
+
+function onSongStart() {
+	camZooming = true;
+}
 
 function onLoad() { //bg shot
 
@@ -51,6 +58,43 @@ function onLoad() { //bg shot
 
 }
 
-function onCreatePost(){
 
+function onBeatHit():Void {
+    if (curBeat == 0) {
+        speed = 4;
+        zoom = -1;
+    }
+
+
+    if (curBeat == 32) {
+        speed = 1;
+        zoom = 1.65;
+    }
+
+    if (curBeat == 96) {
+        speed = 4;
+        zoom = 1;
+    }
+
+    if (curBeat == 100) {
+        speed = 1;
+        zoom = 2;
+    }
+
+    if (curBeat == 104) {
+        speed = 1;
+        zoom = 1.6;
+    }
+
+    if (curBeat == 232) {
+        speed = 2.5;
+        zoom = 1;
+    }
+
+    if (curBeat % speed == 0) {
+        camGame.zoom += 0.015 * zoom;
+        camHUD.zoom += 0.03 * zoom;
+    }
 }
+
+

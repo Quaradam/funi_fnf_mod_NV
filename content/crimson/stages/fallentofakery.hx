@@ -1,8 +1,7 @@
-import flixel.text.FlxText;
+// QRDM was here
+var speed:Int = 4;
+var zoom:Float = 1;
 
-var text:FlxText;
-var beatPerZoom:Int = 4;
-var allowedToBop:Bool = true;
 
 function onSongStart() {
 	camZooming = true;
@@ -13,16 +12,18 @@ function onLoad(){
    bg.scale.set(2.1, 2.1);
    add(bg);
 }
-function onCreatePost(){
-   text = new FlxText(0, 0, 0, '-10-', 50);
-   text.setFormat(Paths.font("MGS2.otf"), 50, FlxColor.WHITE);
-   add(text);
-}
-function onBeatHit(){
-   var beatPerZoom: Int = 1;
-	if (game.curBeat % beatPerZoom == 0 && allowedToBop) {
-		//debugPrint('booped');
-		game.camGame.zoom += 0.015 * game.camZoomingMult;
-		game.camHUD.zoom += 0.03 * game.camZoomingMult;
-	}
+
+function onBeatHit():Void {
+   if (curBeat == 0) {
+     speed = 4;
+     zoom = 1;
+   }
+   if (curBeat == 16) {
+     speed = 1;
+     zoom = 1.3;
+   }
+   if (curBeat % speed == 0) {
+      camGame.zoom += 0.015 * zoom;
+      camHUD.zoom += 0.03 * zoom;
+   }
 }
