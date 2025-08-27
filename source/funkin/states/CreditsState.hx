@@ -72,13 +72,65 @@ class CreditsState extends MusicBeatState
 		// were gonna need to update these credits later lol //data todo //still todo lol
 		var pisspoop:Array<Array<String>> = [
 			// Name - Icon name - Description - Link - BG Color
+			['Crimson Requiem'],
+			[
+				'ReddyForefer',
+				'reddy',
+				'Owner/Director, VA of MY5TCrimson Sonic.EXE for Tyranny',
+				'',
+				'#ab0022'
+
+			],
+			[	'SLTIWX',
+				'iwx',
+				'BG & Icon Artist Tyranny',
+				'',
+				'0x2090e0'
+			],
+			[
+				'Lolq',
+				'lolq',
+				'Inst for Tyranny',
+				'',
+				'0xffffff'
+			],
+			[	'_DatBoiHere',
+				'datboi',
+				'add Vocals for Tyranny',
+				'',
+				'0xffffff'
+			],
+			[
+				'Coral',
+				'coral',
+				'Charted Tyranny',
+				'',
+				'0xffffff'
+			],
+			[
+				'QRDM',
+				'thanks',
+				'Ported this to Nightmare Vision Engine + custom events',
+				'',
+				'0Xffffff'
+			],
+			[''],
+			
+			[
+				'guy',
+				'missing_icon',
+				'cock lover',
+				'',
+				'0xffffff'
+			],
+
 			['NIGHTMARISH FEDS'],
 			[
 				'DuskieWhy',
 				'duskie',
 				'Main Developer',
 				'https://twitter.com/DuskieWhy',
-				'0x6D32A8'
+				'0x1BA4E3'
 			],
 			['Data', 'data', 'Programmer', 'https://twitter.com/FixedData', '0xFFAF64'],
 			[
