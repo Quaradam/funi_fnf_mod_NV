@@ -59,6 +59,7 @@ function onLoad() { //bg shot
 }
 
 
+
 function onBeatHit():Void {
     if (curBeat == 0) {
         speed = 4;

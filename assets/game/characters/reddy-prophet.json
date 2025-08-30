@@ -1,0 +1,36 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				3,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Reddy Idle"
+		}
+	],
+	"vocals_file": "",
+	"no_antialiasing": false,
+	"image": "characters/Reddy",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "RedHuman",
+	"flip_x": false,
+	"healthbar_colors": [
+		124,
+		13,
+		24
+	],
+	"camera_position": [
+		-410,
+		440
+	],
+	"sing_duration": 4,
+	"scale": 0.6,
+	"_editor_isPlayer": true
+}
