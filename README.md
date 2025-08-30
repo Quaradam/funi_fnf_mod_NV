@@ -1,20 +1,10 @@
-helloe we hit single
+thx for Nightmare Vision devs, now i'm gonna make another mod using source code (i'm still bad at coding)
+ahhhh yes, still need to explain how to compile this
+`i copied this from NV page so no changes`
 
-Havee fun with NightmareVision V1! (***[follow me on twitter](https://twitter.com/DuskieWhy)***)
+# How to compile NMV Engine
 
-![](https://github.com/DuskieWhy/NightmareVision/blob/V1/assets/game/images/branding/NMV.png)
-
-## Special thanks to...
-
-* ShadowMario and Co. for [Psych engine](https://github.com/ShadowMario/FNF-PsychEngine)
-
-* Nebula_Zorua for the [specific Psych fork](https://github.com/nebulazorua/exe-psych-fork) NMV is built off and for the Modchart backend
-
-* Rozebud for the chart editor little buddies ([Check out their engine too](https://github.com/ThatRozebudDude/FPS-Plus-Public))
-
-## How to compile NMV Engine
-
-### Download the prerequisites... (skip this if you already have compiled any fnf project, or any flixel project basically lol)
+## Download the prerequisites... (skip this if you already have compiled any fnf project, or any flixel project basically lol)
 
 [Haxe](https://haxe.org/download/)
 
