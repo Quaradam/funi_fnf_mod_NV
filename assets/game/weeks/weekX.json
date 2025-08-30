@@ -10,7 +10,7 @@
 		0
 	],
 	"startUnlocked": true,
-	"hideStoryMode": true,
+	"hideStoryMode": false,
 	"songs": [
 		[
 			"Tyranny",
@@ -23,7 +23,7 @@
 		],
 		[
 			"Fallen to Fakery",
-			"crimson",
+			"false",
 			[
 				0,
 				0,

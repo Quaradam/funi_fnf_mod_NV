@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Prophet.png">
+<SubTexture name="Prophet Idle0000" x="3045" y="1071" width="572" height="1060" frameX="-351" frameY="-163" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Idle0001" x="2471" y="1186" width="570" height="1058" frameX="-355" frameY="-165" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Idle0002" x="1152" y="1186" width="575" height="1080" frameX="-342" frameY="-143" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Idle0003" x="576" y="1186" width="576" height="1087" frameX="-338" frameY="-136" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Idle0004" x="0" y="1186" width="576" height="1090" frameX="-335" frameY="-133" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Idle0005" x="0" y="1186" width="576" height="1090" frameX="-335" frameY="-133" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Idle0006" x="0" y="1186" width="576" height="1090" frameX="-335" frameY="-133" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Left0000" x="2256" y="0" width="789" height="1142" frameX="-75" frameY="-152" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Left0001" x="2256" y="0" width="789" height="1142" frameX="-75" frameY="-152" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Left0002" x="1461" y="0" width="795" height="1162" frameX="-89" frameY="-131" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Left0003" x="1461" y="0" width="795" height="1162" frameX="-89" frameY="-131" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Left0004" x="1461" y="0" width="795" height="1162" frameX="-89" frameY="-131" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Left0005" x="1461" y="0" width="795" height="1162" frameX="-89" frameY="-131" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Down0000" x="712" y="2276" width="734" height="975" frameX="-271" frameY="-203" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Down0001" x="712" y="2276" width="734" height="975" frameX="-271" frameY="-203" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Down0002" x="0" y="2276" width="712" height="986" frameX="-282" frameY="-191" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Down0003" x="0" y="2276" width="712" height="986" frameX="-282" frameY="-191" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Down0004" x="0" y="2276" width="712" height="986" frameX="-282" frameY="-191" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Down0005" x="0" y="2276" width="712" height="986" frameX="-282" frameY="-191" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Right0000" x="3045" y="0" width="756" height="1071" frameX="-524" frameY="-134" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Right0001" x="3045" y="0" width="756" height="1071" frameX="-524" frameY="-134" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Right0002" x="1727" y="1186" width="744" height="1073" frameX="-518" frameY="-132" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Right0003" x="1727" y="1186" width="744" height="1073" frameX="-518" frameY="-132" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Right0004" x="1727" y="1186" width="744" height="1073" frameX="-518" frameY="-132" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Right0005" x="1727" y="1186" width="744" height="1073" frameX="-518" frameY="-132" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Up0000" x="0" y="0" width="723" height="1186" frameX="-210" frameY="-28" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Up0001" x="0" y="0" width="723" height="1186" frameX="-210" frameY="-28" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Up0002" x="723" y="0" width="738" height="1173" frameX="-210" frameY="-40" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Up0003" x="723" y="0" width="738" height="1173" frameX="-210" frameY="-40" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Up0004" x="723" y="0" width="738" height="1173" frameX="-210" frameY="-40" frameWidth="1280" frameHeight="1320" />
+<SubTexture name="Prophet Up0005" x="723" y="0" width="738" height="1173" frameX="-210" frameY="-40" frameWidth="1280" frameHeight="1320" />
+</TextureAtlas>

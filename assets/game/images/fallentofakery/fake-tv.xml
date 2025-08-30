@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="fake-tv.png">
+<SubTexture name="fake-tv loop0000" x="0" y="0" width="940" height="620" frameX="-446" frameY="-266" frameWidth="1940" frameHeight="1120" />
+<SubTexture name="fake-tv loop0001" x="940" y="0" width="940" height="620" frameX="-446" frameY="-266" frameWidth="1940" frameHeight="1120" />
+<SubTexture name="fake-tv loop0002" x="0" y="620" width="940" height="620" frameX="-446" frameY="-266" frameWidth="1940" frameHeight="1120" />
+</TextureAtlas>
