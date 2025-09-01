@@ -44,7 +44,7 @@ function onMoveCamera(whosTurn){
     if (camZoomLock) return;
 
     if(whosTurn == "dad")
-        defaultCamZoom = 1.5;
+        defaultCamZoom = 1.128;
     else
         defaultCamZoom = 1;
 }

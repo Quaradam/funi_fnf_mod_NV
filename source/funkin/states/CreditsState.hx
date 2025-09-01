@@ -24,6 +24,8 @@ class CreditsState extends MusicBeatState
 	var intendedColor:Int;
 	var colorTween:FlxTween;
 	var descBox:AttachedSprite;
+	var fadeTimer:Float = 0;
+	var fadeDuration:Float = 1;
 	
 	var offsetThing:Float = -75;
 	
@@ -34,6 +36,8 @@ class CreditsState extends MusicBeatState
 		DiscordClient.changePresence("In the Menus", null);
 		#end
 		
+		FlxG.sound.playMusic(Paths.music('credits'), 0.9, true);
+
 		persistentUpdate = true;
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		add(bg);
@@ -74,223 +78,27 @@ class CreditsState extends MusicBeatState
 			// Name - Icon name - Description - Link - BG Color
 			['Crimson Requiem'],
 			[
-				'ReddyForefer',
-				'reddy',
-				'Owner/Director, VA of MY5TCrimson Sonic.EXE for Tyranny',
-				'',
-				'#ab0022'
-
+				'ReddyForefer', 'reddy', 'Owner/Director, VA of MY5TCrimson Sonic.EXE for Tyranny', '','#ab0022'
 			],
-			[	'SLTIWX',
-				'iwx',
-				'BG & Icon Artist Tyranny',
-				'',
-				'0x2090e0'
+			[	'SLTIWX','iwx','BG & Icon Artist Tyranny','','0x2090e0'
 			],
 			[
-				'Lolq',
-				'lolq',
-				'Inst for Tyranny',
-				'',
-				'0xffffff'
+				'Lolq', 'lolq', 'Inst for Tyranny',	'', '0xffffff'
 			],
-			[	'_DatBoiHere',
-				'datboi',
-				'add Vocals for Tyranny',
-				'',
-				'0xffffff'
+			[	'_DatBoiHere',	'datboi', 'add Vocals for Tyranny',	'', '0xffffff'
 			],
 			[
-				'Coral',
-				'coral',
-				'Charted Tyranny',
-				'',
-				'0xffffff'
+				'Coral',	'coral',	'Charted Tyranny', '', '0xffffff'
 			],
 			[
-				'QRDM',
-				'thanks',
-				'Ported this to Nightmare Vision Engine + custom events',
-				'',
-				'0Xffffff'
+				'QRDM', 'thanks', 'Ported this to Nightmare Vision Engine\n + custom events', '', '0Xffffff'
 			],
 			[''],
 			
 			[
-				'guy',
-				'missing_icon',
-				'cock lover',
-				'',
-				'0xffffff'
+				'guy', 'missing_icon', 'cock lover', '', '0xffffff'
 			],
 
-			['NIGHTMARISH FEDS'],
-			[
-				'DuskieWhy',
-				'duskie',
-				'Main Developer',
-				'https://twitter.com/DuskieWhy',
-				'0x1BA4E3'
-			],
-			['Data', 'data', 'Programmer', 'https://twitter.com/FixedData', '0xFFAF64'],
-			[
-				'NebulaZorua',
-				'neb',
-				'Creator of the Psych Engine fork NMV is based off, Made the Modchart backend',
-				'https://twitter.com/Nebula_Zorua',
-				'0xB300B3'
-			],
-			[
-				'JoggingScout',
-				'joggingscout',
-				'Artist (SUPER KUTTY!!!!)',
-				'https://twitter.com/JoggingScout',
-				'0x3366CC'
-			],
-			[
-				'Iseta',
-				'iseta',
-				'Artist (a little less kutty...)',
-				'https://twitter.com/Isetaaaaa',
-				'0x6ede0b'
-			],
-			[''],
-			['Special Thanks'],
-			[
-				'Infry',
-				'infry',
-				'Made little buddies for the chart editor',
-				'https://twitter.com/Isetaaaaa',
-				'0x8d00df'
-			],
-			['PurpleKav', 'purple', 'made the other little guys in the chart editor', 'https://twitter.com/PurpleKav', '0xFF9632a8'],
-			[
-				'Rozebud',
-				'rozebud',
-				'Made the original chart little buddies',
-				'https://twitter.com/Isetaaaaa',
-				'0x800000'
-			],
-			[
-				'riconuts',
-				'riconuts',
-				'Made the stage implementation setup',
-				'https://twitter.com/Isetaaaaa',
-				'0x700b98'
-			],
-			['Lethrial', 'leth', 'fixed a couple bugs', 'https://twitter.com/lethrial', '0xFF32a852'],
-			['Iceptual', 'ice', 'also fixed a couple bugs', 'https://x.com/iceptual', '0xFFa86132'],
-			['Aqua', 'aqua', 'also also helped with bugs, stupid and doesnt have an icon', 'https://x.com/theuseraqua', '0x5833B6'],
-			['Ito Saihara', 'ito', 'my friend', 'https://x.com/ItoSaihara_', '0xFFc73c3c'],
-			['Decoy', 'decoy', 'helped with bugs, day one nmv supporter', 'https://www.youtube.com/watch?v=PuYZ-9zcp4w', '0x5833B6'],
-			['PHO', 'pho', 'help with extra keys', 'https://twitter.com/Phomow1', '0x7455be'],
-			['Logo Contributors', 'thanks', 'thank u grossalicious, marco antonio, joggingscout & tgg for making logos i love u mwah mwah', 'https://www.youtube.com/watch?v=ZFnizww3JJg', '0xFF7d7d7d'],
-			['External Contributors', 'thanks', 'thank u crossknife for the move songs batch file, thank you wrathstetic for the intro logo sound effect, thank u orbyyorbinaut for the pixel KUTTY rating', 'https://www.youtube.com/watch?v=ZFnizww3JJg', '0xFF7d7d7d'],
-			['Psych Engine Team'],
-			[
-				'Shadow Mario',
-				'shadowmario',
-				'Main Programmer of Psych Engine',
-				'https://twitter.com/Shadow_Mario_',
-				'0x444444'
-			],
-			[
-				'RiverOaken',
-				'riveroaken',
-				'Main Artist/Animator of Psych Engine',
-				'https://twitter.com/RiverOaken',
-				'0xC30085'
-			],
-			[''],
-			['Former Psych Members'],
-			[
-				'bb-panzu',
-				'bb-panzu',
-				'Ex-Programmer of Psych Engine',
-				'https://twitter.com/bbsub3',
-				'0x389A58'
-			],
-			[''],
-			['Engine Contributors'],
-			[
-				"crowplexus",
-				"crowplexus",
-				"Creator of HScript-Iris and various PR's",
-				"https://twitter.com/crowplexus",
-				"0xCFCFCF"
-			],
-			[
-				'iFlicky',
-				'iflicky',
-				'Composer of Psync and Tea Time\nMade the Dialogue Sounds',
-				'https://twitter.com/flicky_i',
-				'0xAA32FE'
-			],
-			[
-				'SqirraRNG',
-				'sqirra',
-				'Chart Editor\'s Sound Waveform base',
-				'https://x.com/sqirradotdev',
-				'0xFF9300'
-			],
-			[
-				'MAJigsaw77',
-				'majigsaw',
-				'Video Playback support',
-				'https://x.com/MAJigsaw77',
-				'0x6E6E6E'
-			],
-			[
-				'Keoiki',
-				'keoiki',
-				'Note Splash Animations',
-				'https://twitter.com/Keoiki_',
-				'0xFFFFFF'
-			],
-			[
-				'Smokey',
-				'smokey',
-				'Spritemap Texture Support',
-				'https://twitter.com/Smokey_5_',
-				'0x4D5DBD'
-			],
-			[''],
-			["Funkin' Crew"],
-			[
-				'ninjamuffin99',
-				'ninjamuffin99',
-				"Programmer of Friday Night Funkin'",
-				'https://twitter.com/ninja_muffin99',
-				'0xF73838'
-			],
-			[
-				'eliteMasterEric',
-				'mastereric',
-				"Programmer of Friday Night Funkin'",
-				'https://twitter.com/ninja_muffin99',
-				'0xF73838'
-			],
-			[
-				'PhantomArcade',
-				'phantomarcade',
-				"Animator of Friday Night Funkin'",
-				'https://twitter.com/PhantomArcade3K',
-				'0xFFBB1B'
-			],
-			[
-				'evilsk8r',
-				'evilsk8r',
-				"Artist of Friday Night Funkin'",
-				'https://twitter.com/evilsk8r',
-				'0x53E52C'
-			],
-			[
-				'kawaisprite',
-				'kawaisprite',
-				"Composer of Friday Night Funkin'",
-				'https://twitter.com/kawaisprite',
-				'0x6475F3'
-			]
 		];
 		
 		creditsStuff = creditsStuff.concat(pisspoop);
@@ -405,7 +213,10 @@ class CreditsState extends MusicBeatState
 			{
 				colorTween?.cancel();
 				
+				FlxG.sound.music.stop();
 				FlxG.sound.play(Paths.sound('cancelMenu'));
+				FlxG.sound.playMusic(Paths.music('freakyMenu'), 1, true);
+				FlxG.sound.music.fadeOut(1, 0);
 				FlxG.switchState(MainMenuState.new);
 				quitting = true;
 			}
