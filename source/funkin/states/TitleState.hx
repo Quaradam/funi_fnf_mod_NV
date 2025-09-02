@@ -40,7 +40,7 @@ class TitleState extends MusicBeatState
 	public static var instance:TitleState;
 	
 	public static var title = [
-		'FRIDAY', 'NIGHT', 'FUNKIN'
+		'EXE', 'MY5TCrimson', 'Requiem'
 	];
 	
 	public var blackScreen:FlxSprite;
@@ -418,15 +418,16 @@ class TitleState extends MusicBeatState
 						FlxG.sound.music.fadeIn(4, 0, 0.7);
 					case 2:
 						#if PSYCH_WATERMARKS
-						createCoolText(['Psych Engine by'], 15);
+						createCoolText(['EXE MOD OWNER DOWN HERE'], 15);
 						#else
-						createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
+						createCoolText(['REDDY']);
 						#end
 					case 4:
 						#if PSYCH_WATERMARKS
-						addMoreText('Shadow Mario', 15);
-						addMoreText('RiverOaken', 15);
-						addMoreText('shubs', 15);
+						addMoreText('FCK U REDDY THE OWNER', 15);
+						//addMoreText('REDDY', 15);
+						//addMoreText('REDDY', 15);
+						//addMoreText('FCK REDDY OWNER', 15);
 						#else
 						addMoreText('present');
 						#end
@@ -438,7 +439,7 @@ class TitleState extends MusicBeatState
 						#if PSYCH_WATERMARKS
 						createCoolText(['Not associated', 'with'], -40);
 						#else
-						createCoolText(['In association', 'with'], -40);
+						createCoolText(['Not association', 'with'], -40);
 						#end
 					case 8:
 						addMoreText('newgrounds', -40);

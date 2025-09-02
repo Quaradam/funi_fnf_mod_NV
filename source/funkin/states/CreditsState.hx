@@ -37,6 +37,7 @@ class CreditsState extends MusicBeatState
 		#end
 		
 		FlxG.sound.playMusic(Paths.music('credits'), 0.9, true);
+		FlxG.sound.music.fadeIn(4, 0, 0.7);
 
 		persistentUpdate = true;
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
@@ -214,9 +215,9 @@ class CreditsState extends MusicBeatState
 				colorTween?.cancel();
 				
 				FlxG.sound.music.stop();
+				FlxG.sound.music.fadeIn(10, 10, 0.7);
 				FlxG.sound.play(Paths.sound('cancelMenu'));
-				FlxG.sound.playMusic(Paths.music('freakyMenu'), 1, true);
-				FlxG.sound.music.fadeOut(1, 0);
+				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0.8, true);
 				FlxG.switchState(MainMenuState.new);
 				quitting = true;
 			}
