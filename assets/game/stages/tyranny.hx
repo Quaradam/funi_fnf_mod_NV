@@ -1,9 +1,26 @@
+import flixel.tweens.FlxTween;
+
 // QRDM was here too
 var speed:Int = 4;
 var zoom:Float = 1;
+var lockCamera:Bool = false;
+
+function startCountdown():Void {
+    super.startCountdown();
+
+    if (countdownReady != null) countdownReady.visible = true;
+    if (countdownSet != null) countdownSet.visible = true;
+    if (countdownGo != null) countdownGo.visible = true;
+
+    // Optional: Reset alpha if you faded them out earlier
+    countdownReady.alpha = 1;
+    countdownSet.alpha = 1;
+    countdownGo.alpha = 1;
+}
 
 function onSongStart() {
-	camZooming = true;
+    camHUD.visible = false;
+    lockCamera = true;
 }
 
 function onLoad() { //bg shot
@@ -59,13 +76,26 @@ function onLoad() { //bg shot
 }
 
 
+function onCreatePost() {
+    camHUD.alpha = 0;
+}
+
+
 
 function onBeatHit():Void {
     if (curBeat == 0) {
+        camZooming = false;
+        lockCamera = true;
         speed = 4;
         zoom = -1;
     }
 
+    if (curBeat == 28) {
+        camZooming = true;
+        lockCamera = false;
+        camHUD.visible = true;
+        FlxTween.tween(camHUD,{alpha: 1}, 1.5, {ease: FlxEase.quadOut});
+    }
 
     if (curBeat == 32) {
         speed = 1;
@@ -77,12 +107,18 @@ function onBeatHit():Void {
         zoom = 1;
     }
 
+    if (curBeat == 98){
+        FlxTween.tween(camHUD,{alpha: 0}, 0.5, {ease: FlxEase.quadOut});
+    }
     if (curBeat == 100) {
+        camFollow.x = 200;
+        camFollow.y = 320;
         speed = 1;
         zoom = 2;
     }
 
     if (curBeat == 104) {
+         FlxTween.tween(camHUD,{alpha: 1}, 0.2, {ease: FlxEase.quadOut});
         speed = 1;
         zoom = 1.6;
     }
@@ -91,6 +127,10 @@ function onBeatHit():Void {
         speed = 2.5;
         zoom = 1;
     }
+    if (curBeat == 360) {
+        speed = 1;
+        zoom = 1.8;
+    }
 
     if (curBeat % speed == 0) {
         camGame.zoom += 0.015 * zoom;
@@ -98,4 +138,9 @@ function onBeatHit():Void {
     }
 }
 
-
+function onUpdatePost(elapsed:Float) {
+   if (lockCamera) {
+      camGame.zoom = 0.85;
+      camHUD.zoom = 1;
+   }
+}

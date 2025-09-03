@@ -420,7 +420,7 @@ class TitleState extends MusicBeatState
 						#if PSYCH_WATERMARKS
 						createCoolText(['EXE MOD OWNER DOWN HERE'], 15);
 						#else
-						createCoolText(['REDDY']);
+						createCoolText(['EXE MOD OWNER DOWN HERE', 'REDDY'], 15);
 						#end
 					case 4:
 						#if PSYCH_WATERMARKS
@@ -429,7 +429,7 @@ class TitleState extends MusicBeatState
 						//addMoreText('REDDY', 15);
 						//addMoreText('FCK REDDY OWNER', 15);
 						#else
-						addMoreText('present');
+						addMoreText('present', 15);
 						#end
 						
 					case 5:
