@@ -12,6 +12,7 @@ var zoom:Float = 1;
 var camZoomLock = false;
 var text:FlxText;
 
+
 var shader = newShader("warp");
 shader.setFloat("warp", 1.75);
 var f1 = new ShaderFilter(shader);
@@ -64,7 +65,7 @@ function onLoad(){
 
    var ovly:FlxSprite = new FlxSprite().loadGraphic(Paths.image('fallentofakery/fake-overlay'));
    ovly.cameras = [camHUD];
-   ovly.scale.set(1.11, 1.11);
+   ovly.scale.set(1.1, 1.1);
    add(ovly);
 }
 
@@ -90,6 +91,7 @@ function onBeatHit():Void {
       camZooming = false;
       lockCamera = true;     
       FlxTween.tween(camHUD,{alpha: 0}, 0.7, {ease: FlxEase.quadOut});
+      defaultCamZoom = 0.9;
    }
    if (curBeat == 95) {
       camZooming = true;
@@ -97,6 +99,9 @@ function onBeatHit():Void {
       lockCamera = false;
       speed = 1;
       zoom = 1.4;
+   }
+   if (curBeat == 420) {
+      FlxTween.tween(camHUD,{alpha: 0}, 0.7, {ease: FlxEase.quadOut});
    }
 
    if (curBeat % speed == 0) {
@@ -118,7 +123,7 @@ function onEvent(name:String, val1:String, val2:String) {
 }
 function onUpdatePost(elapsed:Float) {
    if (lockCamera) {
-      camGame.zoom = 1;
-      camHUD.zoom = 1;
+      camGame.zoom = 0.9;
+      camHUD.zoom = 0.9;
    }
 }

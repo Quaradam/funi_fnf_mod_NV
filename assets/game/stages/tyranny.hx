@@ -1,21 +1,14 @@
+import funkin.states.substates.GameOverSubstate;
 import flixel.tweens.FlxTween;
 
 // QRDM was here too
 var speed:Int = 4;
 var zoom:Float = 1;
 var lockCamera:Bool = false;
+var go:FunkinVideoSprite;
 
 function startCountdown():Void {
-    super.startCountdown();
 
-    if (countdownReady != null) countdownReady.visible = true;
-    if (countdownSet != null) countdownSet.visible = true;
-    if (countdownGo != null) countdownGo.visible = true;
-
-    // Optional: Reset alpha if you faded them out earlier
-    countdownReady.alpha = 1;
-    countdownSet.alpha = 1;
-    countdownGo.alpha = 1;
 }
 
 function onSongStart() {
@@ -77,7 +70,11 @@ function onLoad() { //bg shot
 
 
 function onCreatePost() {
+    GameOverSubstate.deathSoundName = 'smtg/empty';
+    GameOverSubstate.loopSoundName = 'smtg/empty';
+    GameOverSubstate.endSoundName = 'smtg/empty';
     camHUD.alpha = 0;
+    
 }
 
 
@@ -136,6 +133,23 @@ function onBeatHit():Void {
         camGame.zoom += 0.015 * zoom;
         camHUD.zoom += 0.03 * zoom;
     }
+}
+
+function onGameOverStart()
+{
+    var go = new FunkinVideoSprite();
+    go.onFormat(() ->{
+        go.setGraphicSize(0, FlxG.height);
+        go.updateHitbox();
+        go.screenCenter();
+        go.cameras = [camOther];
+    });
+    go.load(Paths.video("kinofuge"));
+    go.onEnd(() ->{
+        FlxG.resetState();
+    });
+    go.play();
+    GameOverSubstate.instance.add(go);
 }
 
 function onUpdatePost(elapsed:Float) {

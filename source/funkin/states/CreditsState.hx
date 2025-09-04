@@ -79,25 +79,23 @@ class CreditsState extends MusicBeatState
 			// Name - Icon name - Description - Link - BG Color
 			['Crimson Requiem'],
 			[
-				'ReddyForefer', 'reddy', 'Owner/Director, VA of MY5TCrimson Sonic.EXE for Tyranny', '','#ab0022'
+				'ReddyForefer', 'reddy', 'Owner/Director, VA of MY5TCrimson Sonic.EXE for Tyranny\n Chrom for Fallen To Fakery', '','#ab0022'
 			],
 			[	'SLTIWX','iwx','BG & Icon Artist Tyranny','','0x2090e0'
 			],
-			[
-				'Lolq', 'lolq', 'Inst for Tyranny',	'', '0xffffff'
+			[	'CassidyWasHere', 'thanks', 'BG for Fallen to Fakery', '', '0x00ff00'
 			],
-			[	'_DatBoiHere',	'datboi', 'add Vocals for Tyranny',	'', '0xffffff'
+			[	'Lolq', 'lolq', 'Inst for Tyranny',	'', '0xffffff'
 			],
-			[
-				'Coral',	'coral',	'Charted Tyranny', '', '0xffffff'
+			[	'_DatBoiHere',	'datboi', 'add Vocals for Tyranny\n Fallen to Fakey creator\n Propher',	'', '0xffffff'
 			],
-			[
-				'QRDM', 'thanks', 'Ported this to Nightmare Vision Engine\n + custom events', '', '0Xffffff'
+			[	'Coral',	'coral',	'Charted Tyranny', '', '0xffffff'
+			],
+			[	'QRDM', 'thanks', 'Ported this to Nightmare Vision Engine\n + custom events\n Fallen to Fakery chart', '', '0Xffffff'
 			],
 			[''],
 			
-			[
-				'guy', 'missing_icon', 'cock lover', '', '0xffffff'
+			[	'guy', 'missing_icon', 'cock lover', '', '0xffffff'
 			],
 
 		];

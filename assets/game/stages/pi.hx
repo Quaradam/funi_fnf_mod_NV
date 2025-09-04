@@ -12,6 +12,12 @@ function onSongStart() {
    gf.visible = false;
 }
 
+function onLoad() {
+   var bg = new FlxSprite().loadGraphic(Paths.image('pi/bg'));
+   bg.scrollFactor.set(1, 1);
+   bg.scale.set(1, 1);
+   add(bg);
+}
 
 function onCreatePost() {
    vedeo = new FunkinVideoSprite();
