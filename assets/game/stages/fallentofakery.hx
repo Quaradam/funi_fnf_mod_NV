@@ -4,6 +4,7 @@ import flixel.text.FlxText;
 import flixel.FlxSprite;
 import funkin.objects.BGSprite;
 import openfl.filters.ShaderFilter;
+import lime.app.Application;
 
 // QRDM was here
 var lockCamera:Bool = false;
@@ -12,18 +13,24 @@ var zoom:Float = 1;
 var camZoomLock = false;
 var text:FlxText;
 
+var oldTitle = Application.current.window.title;
 
 var shader = newShader("warp");
+//var chromatic = newShader("chromatic");
 shader.setFloat("warp", 1.75);
 var f1 = new ShaderFilter(shader);
 
+
 function onSongStart() {
 	camZooming = true;
+
 }
 
 function onCreatePost(){
    camGame.filters = [f1];
    camHUD.filters = [f1];
+
+   Application.current.window.title = "Fallen to Fakery - " + oldTitle;
 
    camHUD.zoom = 0.9;
    camHUD.alpha = 1;
@@ -88,20 +95,26 @@ function onBeatHit():Void {
      zoom = 1.3;
    }
    if (curBeat == 80) {
-      camZooming = false;
-      lockCamera = true;     
+      camZooming = true;     
       FlxTween.tween(camHUD,{alpha: 0}, 0.7, {ease: FlxEase.quadOut});
-      defaultCamZoom = 0.9;
+      FlxTween.tween(camGame,{zoom: 1.9}, 8, {ease: FlxEase.quadOut});
+
+      //defaultCamZoom = 1.3;
+      speed = 111111111;
+      zoom = 1;
    }
    if (curBeat == 95) {
       camZooming = true;
       FlxTween.tween(camHUD,{alpha: 1}, 0.7, {ease: FlxEase.quadOut});
       lockCamera = false;
+      defaultCamZoom = 0.9;
       speed = 1;
       zoom = 1.4;
    }
    if (curBeat == 420) {
       FlxTween.tween(camHUD,{alpha: 0}, 0.7, {ease: FlxEase.quadOut});
+      FlxTween.tween(camGame, {alpha: 0}, 1.3, {ease: FlxEase.quadOut});
+      FlxTween.tween(camGame, {zoom: 12}, 10, {ease: FlxEase.quadOut});
    }
 
    if (curBeat % speed == 0) {
@@ -126,4 +139,7 @@ function onUpdatePost(elapsed:Float) {
       camGame.zoom = 0.9;
       camHUD.zoom = 0.9;
    }
+}
+function onDestroy() {
+   	Application.current.window.title = oldTitle;
 }

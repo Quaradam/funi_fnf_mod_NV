@@ -417,30 +417,28 @@ class TitleState extends MusicBeatState
 						FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
 						FlxG.sound.music.fadeIn(4, 0, 0.7);
 					case 2:
-						#if PSYCH_WATERMARKS
+						//#if PSYCH_WATERMARKS
 						createCoolText(['EXE MOD OWNER DOWN HERE'], 15);
-						#else
-						createCoolText(['EXE MOD OWNER DOWN HERE', 'REDDY'], 15);
-						#end
+						//#else
+						//createCoolText(['REDDY'], 15);
+						//#end
 					case 4:
-						#if PSYCH_WATERMARKS
-						addMoreText('FCK U REDDY THE OWNER', 15);
-						//addMoreText('REDDY', 15);
-						//addMoreText('REDDY', 15);
-						//addMoreText('FCK REDDY OWNER', 15);
-						#else
+						//#if PSYCH_WATERMARKS
+						addMoreText('REDDY', 15);
+						addMoreText('REDDY', 15);
+						addMoreText('FCK REDDY OWNER', 15);
+						//#else
 						addMoreText('present', 15);
-						#end
+						//#end
 						
 					case 5:
 						deleteCoolText();
 						
 					case 6:
-						#if PSYCH_WATERMARKS
+						//#if PSYCH_WATERMARKS
 						createCoolText(['Not associated', 'with'], -40);
-						#else
-						createCoolText(['Not association', 'with'], -40);
-						#end
+						//#else
+						//#end
 					case 8:
 						addMoreText('newgrounds', -40);
 						ngSpr.visible = true;

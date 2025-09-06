@@ -78,8 +78,7 @@ class CreditsState extends MusicBeatState
 		var pisspoop:Array<Array<String>> = [
 			// Name - Icon name - Description - Link - BG Color
 			['Crimson Requiem'],
-			[
-				'ReddyForefer', 'reddy', 'Owner/Director, VA of MY5TCrimson Sonic.EXE for Tyranny\n Chrom for Fallen To Fakery', '','#ab0022'
+			[	'ReddyForefer', 'reddy', 'Owner/Director, VA of MY5TCrimson Sonic.EXE for Tyranny\n Chrom for Fallen To Fakery', '','#ab0022'
 			],
 			[	'SLTIWX','iwx','BG & Icon Artist Tyranny','','0x2090e0'
 			],
@@ -94,7 +93,6 @@ class CreditsState extends MusicBeatState
 			[	'QRDM', 'thanks', 'Ported this to Nightmare Vision Engine\n + custom events\n Fallen to Fakery chart', '', '0Xffffff'
 			],
 			[''],
-			
 			[	'guy', 'missing_icon', 'cock lover', '', '0xffffff'
 			],
 
