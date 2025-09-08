@@ -38,7 +38,7 @@ class CreditsState extends MusicBeatState
 		
 		FlxG.sound.playMusic(Paths.music('credits'), 0.9, true);
 		FlxG.sound.music.fadeIn(4, 0, 0.7);
-
+		
 		persistentUpdate = true;
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		add(bg);
@@ -78,24 +78,24 @@ class CreditsState extends MusicBeatState
 		var pisspoop:Array<Array<String>> = [
 			// Name - Icon name - Description - Link - BG Color
 			['Crimson Requiem'],
-			[	'ReddyForefer', 'reddy', 'Owner/Director, VA of MY5TCrimson Sonic.EXE for Tyranny\n Chrom for Fallen To Fakery', '','#ab0022'
+			['ReddyForefer', 'reddy', 'Owner/Director, VA of MY5TCrimson Sonic.EXE for Tyranny\n Chrom for Fallen To Fakery', '', '#ab0022'
 			],
-			[	'SLTIWX','iwx','BG & Icon Artist Tyranny','','0x2090e0'
+			['SLTIWX', 'iwx', 'BG & Icon Artist Tyranny & Fallen to Fakery', '', '0x2090e0'
 			],
-			[	'CassidyWasHere', 'thanks', 'BG for Fallen to Fakery', '', '0x00ff00'
+			['CassidyWasHere', 'thanks', 'Concept BG for Fallen to Fakery', '', '0x00ff00'
 			],
-			[	'Lolq', 'lolq', 'Inst for Tyranny',	'', '0xffffff'
+			['Lolq', 'lolq', 'Inst for Tyranny', '', '0xffffff'
 			],
-			[	'_DatBoiHere',	'datboi', 'add Vocals for Tyranny\n Fallen to Fakey creator\n Propher',	'', '0xffffff'
+			['!Itz_D@1BoiH3r3!', 'datboi', 'add Vocals for Fallen to Fakey creator\n Propher', '', '0xffffff'
 			],
-			[	'Coral',	'coral',	'Charted Tyranny', '', '0xffffff'
+			['Coral', 'coral', 'Charted Tyranny', '', '0xffffff'
 			],
-			[	'QRDM', 'thanks', 'Ported this to Nightmare Vision Engine\n + custom events\n Fallen to Fakery chart', '', '0Xffffff'
+			['QRDM', 'thanks', 'Ported this to Nightmare Vision Engine\n + custom events\n Fallen to Fakery chart\n also i played 50+ H on DELTARUNE', '', '0Xffffff'
 			],
 			[''],
-			[	'guy', 'missing_icon', 'cock lover', '', '0xffffff'
+			['Mcoleman', 'Mike', 'Made the vocals for Tryanny and help on Tryanny chart', '', '#463fb3'
 			],
-
+			
 		];
 		
 		creditsStuff = creditsStuff.concat(pisspoop);

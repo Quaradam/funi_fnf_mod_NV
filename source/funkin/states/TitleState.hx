@@ -36,7 +36,7 @@ typedef TitleData =
 class TitleState extends MusicBeatState
 {
 	public static var initialized:Bool = false;
-
+	
 	public static var instance:TitleState;
 	
 	public static var title = [
@@ -63,7 +63,7 @@ class TitleState extends MusicBeatState
 	override public function create():Void
 	{
 		instance = this;
-
+		
 		FunkinAssets.cache.clearStoredMemory();
 		FunkinAssets.cache.clearUnusedMemory();
 		
@@ -205,7 +205,8 @@ class TitleState extends MusicBeatState
 			else initialized = true;
 		}
 		
-		if(isHardcodedState() && script.call('createText') != Globals.Function_Stop){
+		if (isHardcodedState() && script.call('createText') != Globals.Function_Stop)
+		{
 			credGroup = new FlxGroup();
 			add(credGroup);
 			textGroup = new FlxGroup();
@@ -417,28 +418,28 @@ class TitleState extends MusicBeatState
 						FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
 						FlxG.sound.music.fadeIn(4, 0, 0.7);
 					case 2:
-						//#if PSYCH_WATERMARKS
+						// #if PSYCH_WATERMARKS
 						createCoolText(['EXE MOD OWNER DOWN HERE'], 15);
-						//#else
-						//createCoolText(['REDDY'], 15);
-						//#end
+					// #else
+					// createCoolText(['REDDY'], 15);
+					// #end
 					case 4:
-						//#if PSYCH_WATERMARKS
+						// #if PSYCH_WATERMARKS
 						addMoreText('REDDY', 15);
 						addMoreText('REDDY', 15);
 						addMoreText('FCK REDDY OWNER', 15);
-						//#else
+						// #else
 						addMoreText('present', 15);
-						//#end
-						
+					// #end
+					
 					case 5:
 						deleteCoolText();
 						
 					case 6:
-						//#if PSYCH_WATERMARKS
+						// #if PSYCH_WATERMARKS
 						createCoolText(['Not associated', 'with'], -40);
-						//#else
-						//#end
+					// #else
+					// #end
 					case 8:
 						addMoreText('newgrounds', -40);
 						ngSpr.visible = true;
@@ -466,6 +467,7 @@ class TitleState extends MusicBeatState
 	}
 	
 	public var skippedIntro:Bool = false;
+	
 	var increaseVolume:Bool = false;
 	
 	public function skipIntro():Void
