@@ -14,21 +14,26 @@ function onSongStart() {
 
 function onLoad() {
    var bg = new FlxSprite().loadGraphic(Paths.image('pi/bg'));
-   bg.scrollFactor.set(1, 1);
+   bg.scrollFactor.set(1.5, 1.5);
    bg.scale.set(1, 1);
    add(bg);
 }
 
 function onCreatePost() {
+
+    modManager.setValue('alpha', 1, 1);
+    modManager.setValue('opponentSwap', 0.5);
+
    vedeo = new FunkinVideoSprite();
    vedeo.onFormat(()->{
       vedeo.setGraphicSize(0, 0);
       vedeo.scale.set(1, 1);
       vedeo.updateHitbox();
       vedeo.screenCenter();
-      vedeo.cameras = [camGame];
+      vedeo.cameras = [camHUD];
    });
-   vedeo.load(Paths.video('pi'), [FunkinVideoSprite, FunkinVideoSprite.looped]);
+   vedeo.load(Paths.video('pi'), [FunkinVideoSprite.muted]);
+   vedeo.visible = true;
    add(vedeo);
    skipCountdown = true;
    for (note in notes) {
