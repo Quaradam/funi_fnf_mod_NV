@@ -1,11 +1,14 @@
 import funkin.states.substates.GameOverSubstate;
 import flixel.tweens.FlxTween;
+import lime.app.Application;
 
 // QRDM was here too
 var speed:Int = 4;
 var zoom:Float = 1;
 var lockCamera:Bool = false;
 var go:FunkinVideoSprite;
+var oldTitle = Application.current.window.title;
+
 
 function startCountdown():Void {
 
@@ -70,6 +73,8 @@ function onLoad() { //bg shot
 
 
 function onCreatePost() {
+    Application.current.window.title = "Tyranny - " + oldTitle;
+
     GameOverSubstate.deathSoundName = 'smtg/empty';
     GameOverSubstate.loopSoundName = 'smtg/empty';
     GameOverSubstate.endSoundName = 'smtg/empty';
@@ -157,4 +162,8 @@ function onUpdatePost(elapsed:Float) {
       camGame.zoom = 0.85;
       camHUD.zoom = 1;
    }
+}
+
+function onDestroy() {
+    Application.current.window.title = oldTitle;
 }

@@ -104,7 +104,7 @@ class MainMenuState extends MusicBeatState
 			
 			FlxG.camera.follow(camFollow, null, 0.15);
 			
-			var ver = "MY5TCrimson V0";
+			var ver = "MY5TCrimson DEMO";
 			var verionDesc:FlxText = new FlxText(12, FlxG.height - 44, 0, ver, 16);
 			verionDesc.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			verionDesc.y = FlxG.height - verionDesc.height - 12;
