@@ -78,9 +78,9 @@ class CreditsState extends MusicBeatState
 		var pisspoop:Array<Array<String>> = [
 			// Name - Icon name - Description - Link - BG Color
 			['Crimson Requiem'],
-			['ReddyForefer', 'reddy', 'Owner/Director, VA of MY5TCrimson Sonic.EXE for Tyranny\n Chrom for Fallen To Fakery', '', '#ab0022'
+			['ReddyForefer', 'reddy', 'Director, Voice of Crimson, Art direction, Idea Direction', '', '#ab0022'
 			],
-			['SLTIWX', 'iwx', 'BG & Icon Artist Tyranny & Fallen to Fakery', '', '0x2090e0'
+			['SLTIWX', 'iwx', 'BG for Tyranny + Fallen to Fakery\n Crimson + false prophet and dorkly sonic and player (ftf) Icons \n Dorkly Sonic Sprites, OG/JC X Sprites (burnt or slit)', '', '0x2090e0'
 			],
 			['CassidyWasHere', 'thanks', 'Concept BG for Fallen to Fakery', '', '0x00ff00'
 			],
@@ -92,10 +92,12 @@ class CreditsState extends MusicBeatState
 			],
 			['QRDM', 'thanks', 'Ported this to Nightmare Vision Engine\n + custom events\n Fallen to Fakery chart\n also i played 50+ H on DELTARUNE', '', '0Xffffff'
 			],
-			[''],
+			[ 'SakuraCharter', 'thanks' , 'Chart for Burnt or Slit', '', '0Xffffff'
+			],
 			['Mcoleman', 'Mike', 'Made the vocals for Tryanny and help on Tryanny chart', '', '#463fb3'
 			],
-			
+			[ 'Tailskid', 'thanks', 'menu and credits music', '', '0Xffffff'
+			],
 		];
 		
 		creditsStuff = creditsStuff.concat(pisspoop);

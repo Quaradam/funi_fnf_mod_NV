@@ -33,6 +33,7 @@ class Splash extends FlxState
 			});
 			video.onEnd(finish);
 			if (video.load(Paths.video('intro'))) video.delayAndStart();
+
 			else
 			#end logoFunc();
 		});
@@ -50,6 +51,20 @@ class Splash extends FlxState
 				finish();
 			}
 		}
+		#if VIDEOS_ALLOWED
+    for (child in members)
+    {
+        if (Std.is(child, FunkinVideoSprite))
+        {
+            var video = cast(child, FunkinVideoSprite);
+            if ((FlxG.keys.justPressed.ENTER || FlxG.keys.justPressed.SPACE) && video.exists)
+            {
+                video.stop();
+                finish();
+            }
+        }
+    }
+		#end
 		
 		super.update(elapsed);
 	}
