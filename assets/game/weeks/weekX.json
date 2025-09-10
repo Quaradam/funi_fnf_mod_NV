@@ -3,14 +3,18 @@
 	"difficulties": "Hard",
 	"hideFreeplay": false,
 	"weekBackground": "stage",
-	"weekBefore": "tutorial",
 	"freeplayColor": [
 		144,
 		0,
 		0
 	],
+	"weekBefore": "tutorial",
 	"startUnlocked": true,
-	"hideStoryMode": false,
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
 	"songs": [
 		[
 			"Tyranny",
@@ -43,17 +47,13 @@
 			"Burnt or Slit",
 			"dad",
 			[
-				146,
-				113,
-				253
+				86,
+				0,
+				93
 			]
 		]
 	],
-	"weekCharacters": [
-		"dad",
-		"bf",
-		"gf"
-	],
-	"hiddenUntilUnlocked": false,
-	"weekName": "Week X"
+	"hideStoryMode": false,
+	"weekName": "Week X",
+	"hiddenUntilUnlocked": false
 }
