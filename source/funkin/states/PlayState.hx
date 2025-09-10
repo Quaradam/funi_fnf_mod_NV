@@ -63,7 +63,7 @@ class PlayState extends MusicBeatState
 	var noteRows:Array<Array<Array<Note>>> = [[], []];
 	
 	public static var meta:Metadata = null;
-	
+		
 	public static var STRUM_X = 42;
 	public static var STRUM_X_MIDDLESCROLL = -278;
 	public static var arrowSkin:String = '';
@@ -1513,7 +1513,9 @@ class PlayState extends MusicBeatState
 			FlxG.sound.music.pause();
 			vocals.pause();
 		}
-		
+		// credits here
+		var creditsText:FlxTypedGroup<FlxText>;
+
 		// Song duration in a float, useful for the time left feature
 		songLength = FlxG.sound.music.length;
 		

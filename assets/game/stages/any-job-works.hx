@@ -8,8 +8,8 @@ function onCreatePost() {
 
 
 function onLoad() {
-  var bg = new BGSprite("anyjobworks/bg", -50, 100, 1, 1);
-  bg.scale.set(1.2, 1.2);
+  var bg = new BGSprite("anyjobworks/bg", -625, -125, 1, 1);
+  bg.scale.set(1, 1);
   add(bg);
 }
 function onDestroy() {

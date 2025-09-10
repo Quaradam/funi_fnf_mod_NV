@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Dorkly.png">
+<SubTexture name="Dorkly Idle0000" x="466" y="1332" width="471" height="626" frameX="-116" frameY="-120" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Idle0001" x="0" y="1332" width="466" height="631" frameX="-117" frameY="-114" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Idle0002" x="1802" y="647" width="464" height="645" frameX="-119" frameY="-100" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Idle0003" x="1802" y="0" width="464" height="647" frameX="-119" frameY="-98" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Idle0004" x="1339" y="0" width="463" height="648" frameX="-120" frameY="-97" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Idle0005" x="1339" y="0" width="463" height="648" frameX="-120" frameY="-97" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Idle0006" x="1339" y="0" width="463" height="648" frameX="-120" frameY="-97" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Left0000" x="860" y="0" width="479" height="657" frameX="-90" frameY="-89" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Left0001" x="860" y="0" width="479" height="657" frameX="-90" frameY="-89" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Left0002" x="0" y="677" width="474" height="655" frameX="-104" frameY="-91" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Left0003" x="0" y="677" width="474" height="655" frameX="-104" frameY="-91" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Left0004" x="0" y="677" width="474" height="655" frameX="-104" frameY="-91" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Left0005" x="0" y="677" width="474" height="655" frameX="-104" frameY="-91" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Down0000" x="937" y="1332" width="400" height="581" frameX="-187" frameY="-170" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Down0001" x="937" y="1332" width="400" height="581" frameX="-187" frameY="-170" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Down0002" x="1339" y="648" width="391" height="585" frameX="-187" frameY="-165" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Down0003" x="1339" y="648" width="391" height="585" frameX="-187" frameY="-165" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Down0004" x="1339" y="648" width="391" height="585" frameX="-187" frameY="-165" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Down0005" x="1339" y="648" width="391" height="585" frameX="-187" frameY="-165" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Right0000" x="474" y="677" width="427" height="653" frameX="-248" frameY="-97" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Right0001" x="474" y="677" width="427" height="653" frameX="-248" frameY="-97" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Right0002" x="901" y="677" width="427" height="652" frameX="-216" frameY="-97" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Right0003" x="901" y="677" width="427" height="652" frameX="-216" frameY="-97" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Right0004" x="901" y="677" width="427" height="652" frameX="-216" frameY="-97" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Right0005" x="901" y="677" width="427" height="652" frameX="-216" frameY="-97" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Up0000" x="0" y="0" width="433" height="677" frameX="-138" frameY="-73" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Up0001" x="0" y="0" width="433" height="677" frameX="-138" frameY="-73" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Up0002" x="433" y="0" width="427" height="664" frameX="-136" frameY="-85" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Up0003" x="433" y="0" width="427" height="664" frameX="-136" frameY="-85" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Up0004" x="433" y="0" width="427" height="664" frameX="-136" frameY="-85" frameWidth="800" frameHeight="760" />
+<SubTexture name="Dorkly Up0005" x="433" y="0" width="427" height="664" frameX="-136" frameY="-85" frameWidth="800" frameHeight="760" />
+</TextureAtlas>

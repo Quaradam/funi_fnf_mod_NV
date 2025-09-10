@@ -40,7 +40,7 @@ class TitleState extends MusicBeatState
 	public static var instance:TitleState;
 	
 	public static var title = [
-		'EXE', 'MY5TCrimson', 'Requiem'
+		'VS', 'MY5TCrimson', 'Requiem'
 	];
 	
 	public var blackScreen:FlxSprite;
@@ -122,6 +122,11 @@ class TitleState extends MusicBeatState
 		#end
 	}
 	
+
+
+	var inputSequence:Array<String> = [];
+	var correctSequence:Array<String> = ["UP", "DOWN", "LEFT", "RIGHT"];
+
 	var logoBl:FlxSprite;
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
@@ -337,8 +342,21 @@ class TitleState extends MusicBeatState
 				if (controls.UI_RIGHT) swagShader.hue += elapsed * 0.1;
 			}
 		}
-		
+		if (inputSequence.join(",") == correctSequence.join(",")){
+			PlayState.SONG = Song.loadFromJson("pi-hard", "pi");
+			FlxG.switchState(new PlayState());
+		}
+
+
 		super.update(elapsed);
+
+		if (FlxG.keys.justPressed.UP) inputSequence.push("UP");
+		if (FlxG.keys.justPressed.DOWN) inputSequence.push("DOWN");
+		if (FlxG.keys.justPressed.LEFT) inputSequence.push("LEFT");
+		if (FlxG.keys.justPressed.RIGHT) inputSequence.push("RIGHT");
+
+
+		if (inputSequence.length > 4) inputSequence.shift();
 	}
 	
 	public function createCoolText(textArray:Array<String>, ?offset:Float = 0)
@@ -425,9 +443,9 @@ class TitleState extends MusicBeatState
 					// #end
 					case 4:
 						// #if PSYCH_WATERMARKS
+						addMoreText(' ', 15);
 						addMoreText('REDDY', 15);
-						addMoreText('REDDY', 15);
-						addMoreText('FCK REDDY OWNER', 15);
+						addMoreText(' ', 15);
 						// #else
 						addMoreText('present', 15);
 					// #end

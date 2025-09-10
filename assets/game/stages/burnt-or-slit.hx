@@ -17,7 +17,6 @@ function onLoad() {
   bg.scale.set(3, 3);
   add(bg);
 }
-
 function onBeatHit() {
 
   if(curBeat == 4) {

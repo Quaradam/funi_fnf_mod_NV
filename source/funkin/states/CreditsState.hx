@@ -90,6 +90,8 @@ class CreditsState extends MusicBeatState
 			],
 			['Coral', 'coral', 'Charted Tyranny', '', '0xffffff'
 			],
+			[ 'PenguinPhobic', 'thanks', 'Sprites for Crimson', '', '0Xffffff'
+			],
 			['QRDM', 'thanks', 'Ported this to Nightmare Vision Engine\n + custom events\n Fallen to Fakery chart\n also i played 50+ H on DELTARUNE', '', '0Xffffff'
 			],
 			[ 'SakuraCharter', 'thanks' , 'Chart for Burnt or Slit', '', '0Xffffff'
