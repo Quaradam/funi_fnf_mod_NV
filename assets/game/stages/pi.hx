@@ -15,14 +15,14 @@ function onSongStart() {
 function onLoad() {
    var bg = new FlxSprite().loadGraphic(Paths.image('pi/bg'));
    bg.scrollFactor.set(1.5, 1.5);
-   bg.scale.set(1, 1);
+   bg.scale.set(1.9, 1.9);
    add(bg);
 }
 
 function onCreatePost() {
 
     modManager.setValue('alpha', 1, 1);
-    modManager.setValue('opponentSwap', 0.5);
+    modManager.setValue('opponentSwap', 0);
 
    vedeo = new FunkinVideoSprite();
    vedeo.onFormat(()->{

@@ -1515,7 +1515,12 @@ class PlayState extends MusicBeatState
 		}
 		// credits here
 		var creditsText:FlxTypedGroup<FlxText>;
-
+		creditsText = new FlxTypedGroup<FlxText>();
+		switch(SONG.song.toLowerCase())
+		{
+			default:
+				
+		}
 		// Song duration in a float, useful for the time left feature
 		songLength = FlxG.sound.music.length;
 		

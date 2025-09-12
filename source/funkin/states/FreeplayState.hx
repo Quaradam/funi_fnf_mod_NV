@@ -44,6 +44,10 @@ class FreeplayState extends MusicBeatState
 	
 	public var iconArray:Array<HealthIcon> = [];
 	
+
+	public var fpart:Bool = false;
+	public var move:FlxSprite;
+	public var stand:FlxSprite;
 	public var bg:FlxSprite;
 	public var intendedColor:Int;
 	
@@ -100,6 +104,27 @@ class FreeplayState extends MusicBeatState
 			add(bg);
 			bg.screenCenter();
 			
+			//bf standing here bro im loosing my mind
+			//if
+			stand = new FlxSprite(0, -250);
+			stand.loadGraphic(Paths.image('fppng/osidle'));
+			stand.scale.set(0.55, 0.55);
+			stand.antialiasing = ClientPrefs.globalAntialiasing;
+			add(stand);
+			//else
+			remove(stand);
+
+			//if
+			move = new FlxSprite(500, 445);
+			move.frames = Paths.getSparrowAtlas('fppng/movebi');
+			move.animation.addByPrefix('dance', 'movebi', 12, true);
+			move.animation.play('dance');
+			move.scale.set(1.7, 1.7);
+			move.antialiasing = ClientPrefs.globalAntialiasing;
+			add(move);
+			//else
+			remove(move);
+
 			grpSongs = new FlxTypedGroup<Alphabet>();
 			add(grpSongs);
 			
@@ -129,7 +154,7 @@ class FreeplayState extends MusicBeatState
 				
 				// using a FlxGroup is too much fuss!
 				iconArray.push(icon);
-				add(icon);
+				//add(icon);
 			}
 			WeekData.setDirectoryFromWeek();
 			

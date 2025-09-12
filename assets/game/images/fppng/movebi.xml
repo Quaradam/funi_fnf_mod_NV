@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="movebi.png">
+<SubTexture name="movebi 10000" x="419" y="0" width="210" height="212" frameX="0" frameY="0" frameWidth="210" frameHeight="212" />
+<SubTexture name="movebi 20000" x="0" y="0" width="208" height="217" frameX="0" frameY="0" frameWidth="208" frameHeight="217" />
+<SubTexture name="movebi 30000" x="208" y="0" width="211" height="217" frameX="0" frameY="0" frameWidth="211" frameHeight="217" />
+</TextureAtlas>
