@@ -162,7 +162,7 @@ class FreeplayState extends MusicBeatState
 			scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
 			
 			scoreBG = new FlxSprite(scoreText.x - 6, 0).makeGraphic(1, 66, 0xFF000000);
-			scoreBG.alpha = 0.6;
+			scoreBG.alpha = 0;
 			add(scoreBG);
 			
 			diffText = new FlxText(scoreText.x, scoreText.y + 36, 0, "", 24);
@@ -182,7 +182,7 @@ class FreeplayState extends MusicBeatState
 			curDifficulty = Math.round(Math.max(0, Difficulty.defaultDifficulties.indexOf(lastDifficultyName)));
 			
 			var textBG:FlxSprite = new FlxSprite(0, FlxG.height - 26).makeGraphic(FlxG.width, 26, 0xFF000000);
-			textBG.alpha = 0.6;
+			textBG.alpha = 0;
 			add(textBG);
 			
 			#if PRELOAD_ALL
@@ -288,18 +288,18 @@ class FreeplayState extends MusicBeatState
 			
 			if (songs.length > 1)
 			{
-				if (controls.UI_UP_P)
+				if (controls.UI_LEFT_P)
 				{
 					changeSelection(-shiftMult);
 					holdTime = 0;
 				}
-				if (controls.UI_DOWN_P)
+				if (controls.UI_RIGHT_P)
 				{
 					changeSelection(shiftMult);
 					holdTime = 0;
 				}
 				
-				if (controls.UI_DOWN || controls.UI_UP)
+				if (controls.UI_LEFT || controls.UI_RIGHT)
 				{
 					var checkLastHold:Int = Math.floor((holdTime - 0.5) * 10);
 					holdTime += elapsed;
@@ -307,15 +307,15 @@ class FreeplayState extends MusicBeatState
 					
 					if (holdTime > 0.5 && checkNewHold - checkLastHold > 0)
 					{
-						changeSelection((checkNewHold - checkLastHold) * (controls.UI_UP ? -shiftMult : shiftMult));
+						changeSelection((checkNewHold - checkLastHold) * (controls.UI_RIGHT ? -shiftMult : shiftMult));
 						changeDiff();
 					}
 				}
 			}
 			
-			if (controls.UI_LEFT_P) changeDiff(-1);
-			else if (controls.UI_RIGHT_P) changeDiff(1);
-			else if (controls.UI_UP_P || controls.UI_DOWN_P) changeDiff();
+			if (controls.UI_UP_P) changeDiff(-1);
+			else if (controls.UI_DOWN_P) changeDiff(1);
+			else if (controls.UI_LEFT_P || controls.UI_RIGHT_P) changeDiff();
 			
 			if (controls.BACK)
 			{
