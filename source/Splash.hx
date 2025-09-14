@@ -24,6 +24,7 @@ class Splash extends FlxState
 		
 		FlxTimer.wait(1, () -> {
 			#if VIDEOS_ALLOWED
+
 			var video = new FunkinVideoSprite();
 			add(video);
 			video.onFormat(() -> {
@@ -32,7 +33,7 @@ class Splash extends FlxState
 				video.screenCenter();
 			});
 			video.onEnd(finish);
-			if (video.load(Paths.video('intros/intro'))) video.delayAndStart();
+			if (video.load(Paths.video('intros/intro' + FlxG.random.int(1, 2)))) video.delayAndStart();
 
 			else
 			#end logoFunc();

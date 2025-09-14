@@ -1,0 +1,122 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				314,
+				170
+			],
+			"loop": false,
+			"fps": 12,
+			"anim": "idle",
+			"indices": [],
+			"name": "OGX Idle"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				220,
+				213
+			],
+			"anim": "singLEFTmiss",
+			"fps": 12,
+			"name": "OGX Left MISS",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				275,
+				208
+			],
+			"anim": "singDOWNmiss",
+			"fps": 12,
+			"name": "OGX Down MISS",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				330,
+				220
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 12,
+			"name": "OGX Right MISS",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				282,
+				215
+			],
+			"anim": "singUPmiss",
+			"fps": 12,
+			"name": "OGX Up MISS",
+			"indices": []
+		},
+		{
+			"offsets": [
+				300,
+				160
+			],
+			"loop": false,
+			"fps": 12,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "OGX Down0"
+		},
+		{
+			"offsets": [
+				290,
+				170
+			],
+			"loop": false,
+			"fps": 12,
+			"anim": "singUP",
+			"indices": [],
+			"name": "OGX Up0"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				315,
+				171
+			],
+			"anim": "singRIGHT",
+			"fps": 12,
+			"name": "OGX Right0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				290,
+				160
+			],
+			"anim": "singLEFT",
+			"fps": 12,
+			"name": "OGX Left0",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/OGX",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "OGX",
+	"flip_x": true,
+	"healthbar_colors": [
+		32,
+		23,
+		87
+	],
+	"camera_position": [
+		170,
+		-40
+	],
+	"sing_duration": 4,
+	"scale": 0.6
+}

@@ -111,19 +111,16 @@ class FreeplayState extends MusicBeatState
 			stand.scale.set(0.55, 0.55);
 			stand.antialiasing = ClientPrefs.globalAntialiasing;
 			add(stand);
-			//else
-			remove(stand);
+			stand.visible = true;
 
 			//if
 			move = new FlxSprite(500, 445);
 			move.frames = Paths.getSparrowAtlas('fppng/movebi');
-			move.animation.addByPrefix('dance', 'movebi', 12, true);
-			move.animation.play('dance');
+			move.animation.addByPrefix('move', 'movebi', 12, false);
 			move.scale.set(1.7, 1.7);
 			move.antialiasing = ClientPrefs.globalAntialiasing;
 			add(move);
-			//else
-			remove(move);
+			move.visible = false;
 
 			grpSongs = new FlxTypedGroup<Alphabet>();
 			add(grpSongs);
@@ -290,11 +287,23 @@ class FreeplayState extends MusicBeatState
 			{
 				if (controls.UI_LEFT_P)
 				{
+					if (move != null) {
+						move.flipX = true;
+						move.visible = true;
+						stand.visible = false;
+						move.animation.play('move', true);
+					}
 					changeSelection(-shiftMult);
 					holdTime = 0;
 				}
 				if (controls.UI_RIGHT_P)
 				{
+					if (move != null) {
+						move.flipX = false;
+						move.visible = true;
+						stand.visible = false;
+						move.animation.play('move', true);
+					}
 					changeSelection(shiftMult);
 					holdTime = 0;
 				}
@@ -307,10 +316,23 @@ class FreeplayState extends MusicBeatState
 					
 					if (holdTime > 0.5 && checkNewHold - checkLastHold > 0)
 					{
+						if (move != null && move.animation.curAnim != null && move.animation.curAnim.finished) {
+							move.visible = true;
+							stand.visible = false;
+							move.flipX = controls.UI_LEFT;
+							move.animation.play('move', true);
+						}
 						changeSelection((checkNewHold - checkLastHold) * (controls.UI_RIGHT ? -shiftMult : shiftMult));
 						changeDiff();
 					}
 				}
+			}
+			
+			// Hide move sprite when animation finishes and show standing sprite
+			if (move != null && move.animation.curAnim != null && move.animation.curAnim.finished)
+			{
+				move.visible = false;
+				stand.visible = true;
 			}
 			
 			if (controls.UI_UP_P) changeDiff(-1);
@@ -443,7 +465,7 @@ class FreeplayState extends MusicBeatState
 			
 			if (playSound) FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
 			
-			curSelected = FlxMath.wrap(curSelected + change, 0, songs.length - 1);
+			curSelected = FlxMath.wrap(curSelected + change, 0, songs.length -1);
 			
 			var newColor:Int = songs[curSelected].color;
 			if (newColor != intendedColor)
