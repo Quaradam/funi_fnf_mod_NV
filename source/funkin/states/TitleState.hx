@@ -126,6 +126,8 @@ class TitleState extends MusicBeatState
 
 	var inputSequence:Array<String> = [];
 	var correctSequence:Array<String> = ["UP", "DOWN", "LEFT", "RIGHT"];
+	var sequenceReady:Bool = false;
+
 
 	var logoBl:FlxSprite;
 	var gfDance:FlxSprite;
@@ -342,9 +344,11 @@ class TitleState extends MusicBeatState
 				if (controls.UI_RIGHT) swagShader.hue += elapsed * 0.1;
 			}
 		}
-		if (inputSequence.join(",") == correctSequence.join(",")){
+		if (sequenceReady && FlxG.keys.justPressed.ENTER){
 			PlayState.SONG = Song.loadFromJson("pi-hard", "pi");
 			FlxG.switchState(new PlayState());
+			inputSequence = [];
+			sequenceReady = false;
 		}
 
 
@@ -357,6 +361,10 @@ class TitleState extends MusicBeatState
 
 
 		if (inputSequence.length > 4) inputSequence.shift();
+
+		if (inputSequence.join(",") == correctSequence.join(",")) {
+    	sequenceReady = true;
+		}
 	}
 	
 	public function createCoolText(textArray:Array<String>, ?offset:Float = 0)

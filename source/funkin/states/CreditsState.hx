@@ -80,9 +80,13 @@ class CreditsState extends MusicBeatState
 			['Crimson Requiem'],
 			['ReddyForefer', 'reddy', 'Director, Voice of Crimson, Art direction, Idea Direction', '', '#ab0022'
 			],
-			['SLTIWX', 'iwx', 'BG for Tyranny + Fallen to Fakery\n Crimson + false prophet and dorkly sonic and player (ftf) Icons \n Dorkly Sonic Sprites, OG/JC X Sprites (burnt or slit)', '', '0x2090e0'
+			['ChristianTheHedgehog', 'thanks', 'VA of False Prophet', '', '#ff8800'
 			],
-			['CassidyWasHere', 'thanks', 'Concept BG for Fallen to Fakery', '', '0x00ff00'
+			['SLTIWX', 'iwx', 'bunch of stuff (sprites, animations, bg)', '', '0x2090e0'
+			],
+			['MrDankBoi23', 'mrboi', 'VA for Coolrash, animation for MY5TCrimson sprites', '', '0x00ff00'
+			],
+			['Jaytee', 'thanks', 'VA for OG/JC X', '', '0xff00ff'
 			],
 			['Lolq', 'lolq', 'Inst for Tyranny', '', '0xffffff'
 			],
@@ -92,7 +96,15 @@ class CreditsState extends MusicBeatState
 			],
 			[ 'PenguinPhobic', 'thanks', 'Sprites for Crimson', '', '0Xffffff'
 			],
-			['QRDM', 'thanks', 'Ported this to Nightmare Vision Engine\n + custom events\n Fallen to Fakery chart\n also i played 50+ H on DELTARUNE', '', '0Xffffff'
+			['FroX_art', 'frox', 'Sprites for Coolrash', '', '0xffffff'
+			],
+			['SEA', 'sea', 'cutscene video', '', '0Xffffff'
+			],
+			['Powercord', 'thanks', 'ring in FPMenu', '', '0Xffffff'
+			],
+			['QRDM', 'qrdm', 'Ported this to Nightmare Vision Engine\n + custom events\n Fallen to Fakery chart\n also i played 50+ H on DELTARUNE', '', '0Xffffff'
+			],
+			['Fredy', 'thanks', 'Chart for AJW', '', '0Xffffff'
 			],
 			[ 'SakuraCharter', 'thanks' , 'Chart for Burnt or Slit', '', '0Xffffff'
 			],

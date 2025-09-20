@@ -7,6 +7,7 @@ import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
 
 import funkin.backend.Difficulty;
 import funkin.states.editors.ChartingState;
@@ -39,13 +40,16 @@ class FreeplayState extends MusicBeatState
 	public var intendedScore:Int = 0;
 	public var intendedRating:Float = 0;
 	
-	public var grpSongs:FlxTypedGroup<Alphabet>;
+	public var grpSongs:FlxTypedGroup<FlxText>;
 	public var curPlaying:Bool = false;
 	
 	public var iconArray:Array<HealthIcon> = [];
 	
 
 	public var fpart:Bool = false;
+	public var rupert:FlxSprite;
+	public var positions:Array<Float> = [60, 160, 260, 360];
+	public var currentIndex:Int = 0;
 	public var move:FlxSprite;
 	public var stand:FlxSprite;
 	public var bg:FlxSprite;
@@ -103,7 +107,13 @@ class FreeplayState extends MusicBeatState
 			bg.antialiasing = ClientPrefs.globalAntialiasing;
 			add(bg);
 			bg.screenCenter();
-			
+
+			rupert = new FlxSprite(positions[currentIndex], 100);
+			rupert.loadGraphic(Paths.image('fppng/ring'));
+			rupert.scale.set(1.3, 1.3);
+			add(rupert);
+			rupert.visible = true;
+
 			//bf standing here bro im loosing my mind
 			//if
 			stand = new FlxSprite(0, -250);
@@ -113,6 +123,8 @@ class FreeplayState extends MusicBeatState
 			add(stand);
 			stand.visible = true;
 
+
+			//bf fukng move BI-
 			//if
 			move = new FlxSprite(500, 445);
 			move.frames = Paths.getSparrowAtlas('fppng/movebi');
@@ -122,34 +134,48 @@ class FreeplayState extends MusicBeatState
 			add(move);
 			move.visible = false;
 
-			grpSongs = new FlxTypedGroup<Alphabet>();
+			grpSongs = new FlxTypedGroup<FlxText>();
 			add(grpSongs);
+			
+			var centerX:Float = FlxG.width / 2;
+			var itemSpacing:Float = 400; // Match the spacing in changeSelection
 			
 			for (i in 0...songs.length)
 			{
-				var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
-				songText.isMenuItem = true;
-				songText.targetY = i;
+				var songText:FlxText = new FlxText(0, 0, 0, songs[i].songName, 48);
+				songText.setFormat(Paths.font("sonic2HUD.ttf"), 72, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+				songText.borderSize = 2;
+				songText.ID = i; // Store the index in ID property
+				
+				var relativeIndex:Int = i - curSelected;
+				
+				if (relativeIndex > 2) {
+					// Items to the right - start off screen right
+					songText.x = FlxG.width + (relativeIndex * 100);
+				} else if (relativeIndex < -2) {
+					// Items to the left - start off screen left
+					songText.x = -songText.width - ((Math.abs(relativeIndex) - 2) * 100);
+				} else {
+					// Items in view range
+					songText.x = centerX + (relativeIndex * itemSpacing) - (songText.width / 2);
+				}
+				
+				// Center vertically
+				songText.y = (FlxG.height * 0.5) - (songText.height / 2);
+				songText.alpha = (i == curSelected) ? 1.0 : 0.6;
+				
 				grpSongs.add(songText);
 				
-				if (songText.width > 980)
+				if (songText.width > 280)
 				{
-					var textScale:Float = 980 / songText.width;
+					var textScale:Float = 280 / songText.width;
 					songText.scale.x = textScale;
-					for (letter in songText.lettersArray)
-					{
-						letter.x *= textScale;
-						letter.offset.x *= textScale;
-					}
-					// songText.updateHitbox();
-					// trace(songs[i].songName + ' new scale: ' + textScale);
 				}
 				
 				Mods.currentModDirectory = songs[i].folder;
 				var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
 				icon.sprTracker = songText;
 				
-				// using a FlxGroup is too much fuss!
 				iconArray.push(icon);
 				//add(icon);
 			}
@@ -282,7 +308,17 @@ class FreeplayState extends MusicBeatState
 			
 			var shiftMult:Int = 1;
 			if (FlxG.keys.pressed.SHIFT) shiftMult = 3;
-			
+
+			if (FlxG.keys.pressed.LEFT) {
+				currentIndex--;
+				if (currentIndex < 0) currentIndex = positions.length - 1;
+        FlxTween.tween(rupert, {x: positions[currentIndex]}, 1, {ease: FlxEase.expoInOut});
+    	} else if (FlxG.keys.pressed.RIGHT) {
+				currentIndex++;
+				if (currentIndex >= positions.length) currentIndex = 0;
+				FlxTween.tween(rupert, {x: positions[currentIndex]}, 1, {ease: FlxEase.expoInOut});
+			}
+          	
 			if (songs.length > 1)
 			{
 				if (controls.UI_LEFT_P)
@@ -489,17 +525,39 @@ class FreeplayState extends MusicBeatState
 			
 			iconArray[curSelected].alpha = 1;
 			
+			var itemSpacing:Float = 400; // Increased spacing between items
+			var centerX:Float = FlxG.width / 2;
+
 			for (item in grpSongs.members)
 			{
-				item.targetY = bullShit - curSelected;
+				var relativeIndex:Int = bullShit - curSelected;
 				bullShit++;
-				
+
 				item.alpha = 0.6;
-				
-				if (item.targetY == 0)
-				{
-					item.alpha = 1;
+				if (relativeIndex == 0) item.alpha = 1;
+
+				// Calculate target position
+				var targetX:Float;
+				if (relativeIndex > 2) {
+					// Items to the right - position off screen right
+					targetX = FlxG.width + (relativeIndex * 100);
+				} else if (relativeIndex < -2) {
+					// Items to the left - position off screen left
+					targetX = -item.width - ((Math.abs(relativeIndex) - 2) * 100);
+				} else {
+					// Items in view range
+					targetX = centerX + (relativeIndex * itemSpacing) - (item.width / 2);
 				}
+
+				// Animate to position
+				if (item.x != targetX)
+				{
+					FlxTween.cancelTweensOf(item, ["x"]);
+					FlxTween.tween(item, {x: targetX}, 0.3, {ease: FlxEase.quartOut});
+				}
+				
+				// Center vertically
+				item.y = (FlxG.height * 0.5) - (item.height / 2);
 			}
 			
 			Mods.currentModDirectory = songs[curSelected].folder;
