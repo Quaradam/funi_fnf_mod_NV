@@ -16,6 +16,8 @@ import funkin.states.*;
 import funkin.states.substates.*;
 import funkin.data.*;
 import funkin.objects.*;
+import flixel.util.FlxSave;
+import sys.FileSystem;
 
 class FreeplayState extends MusicBeatState
 {
@@ -48,11 +50,11 @@ class FreeplayState extends MusicBeatState
 
 	public var fpart:Bool = false;
 	public var rupert:FlxSprite;
-	public var positions:Array<Float> = [60, 160, 260, 360];
-	public var currentIndex:Int = 0;
 	public var move:FlxSprite;
 	public var stand:FlxSprite;
 	public var bg:FlxSprite;
+	public var currentIndex:Int = curSelected;
+	public var freeplayItems:Array<FlxText> = [];
 	public var intendedColor:Int;
 	
 	override function create()
@@ -95,6 +97,16 @@ class FreeplayState extends MusicBeatState
 			}
 		}
 		WeekData.loadTheFirstEnabledMod();
+		// Check if pi should be added
+		var save = new FlxSave();
+		save.bind('funkin');
+		if (save.data.piCompleted == true) {
+			WeekData.loadTheFirstEnabledMod(); // Reset directory to default
+			var songPath = Paths.json('songs/pi/pi');
+			if (sys.FileSystem.exists(songPath)) {
+				addSong('pi', -1, 'tyranny', 0xFF8B40B5); // Purple color for pi song
+			}
+		}
 		
 		setUpScript();
 		
@@ -108,9 +120,15 @@ class FreeplayState extends MusicBeatState
 			add(bg);
 			bg.screenCenter();
 
-			rupert = new FlxSprite(positions[currentIndex], 100);
+			rupert = new FlxSprite(-100, 0);
 			rupert.loadGraphic(Paths.image('fppng/ring'));
 			rupert.scale.set(1.3, 1.3);
+			rupert.updateHitbox();
+			rupert.y = (FlxG.height * 0.5) - (rupert.height / 2); // Center vertically
+			rupert.scale.set(1.3, 1.3);
+			rupert.angle = 0;
+			rupert.antialiasing = ClientPrefs.globalAntialiasing;
+			rupert.screenCenter(X); // Center horizontally
 			add(rupert);
 			rupert.visible = true;
 
@@ -165,6 +183,7 @@ class FreeplayState extends MusicBeatState
 				songText.alpha = (i == curSelected) ? 1.0 : 0.6;
 				
 				grpSongs.add(songText);
+				freeplayItems.push(songText);
 				
 				if (songText.width > 280)
 				{
@@ -306,18 +325,16 @@ class FreeplayState extends MusicBeatState
 			scoreText.text = 'PERSONAL BEST: ' + lerpScore + ' (' + ratingSplit.join('.') + '%)';
 			positionHighscore();
 			
+			// Update ring position to center with the current song text
+			for (item in grpSongs.members) {
+				if (item.ID == curSelected) {
+					rupert.x = item.x + (item.width / 2) - (rupert.width / 2);
+					break;
+				}
+			}
+			
 			var shiftMult:Int = 1;
 			if (FlxG.keys.pressed.SHIFT) shiftMult = 3;
-
-			if (FlxG.keys.pressed.LEFT) {
-				currentIndex--;
-				if (currentIndex < 0) currentIndex = positions.length - 1;
-        FlxTween.tween(rupert, {x: positions[currentIndex]}, 1, {ease: FlxEase.expoInOut});
-    	} else if (FlxG.keys.pressed.RIGHT) {
-				currentIndex++;
-				if (currentIndex >= positions.length) currentIndex = 0;
-				FlxTween.tween(rupert, {x: positions[currentIndex]}, 1, {ease: FlxEase.expoInOut});
-			}
           	
 			if (songs.length > 1)
 			{
@@ -503,6 +520,32 @@ class FreeplayState extends MusicBeatState
 			
 			curSelected = FlxMath.wrap(curSelected + change, 0, songs.length -1);
 			
+			// Update ring position with animation
+			if (change != 0) {
+				FlxTween.cancelTweensOf(rupert);
+				
+				// Find the currently selected text item
+				var selectedItem:FlxText = null;
+				for (item in grpSongs.members) {
+					if (item.ID == curSelected) {
+						selectedItem = cast item;
+						break;
+					}
+				}
+				
+				if (selectedItem != null) {
+					// Calculate target position to center with the text
+					var targetX:Float = selectedItem.x + (selectedItem.width / 2) - (rupert.width / 2);
+					
+					// Smoothly move the ring to the target position
+					FlxTween.tween(rupert, {
+						x: targetX
+					}, 0.3, {
+						ease: FlxEase.quartOut
+					});
+				}
+			}
+			
 			var newColor:Int = songs[curSelected].color;
 			if (newColor != intendedColor)
 			{
@@ -613,6 +656,13 @@ class FreeplayState extends MusicBeatState
 		scoreBG.x = FlxG.width - (scoreBG.scale.x / 2);
 		diffText.x = Std.int(scoreBG.x + (scoreBG.width / 2));
 		diffText.x -= diffText.textField.textWidth / 2;
+	}
+
+	public static function unlockPiSong() {
+		var save = new FlxSave();
+		save.bind('funkin');
+		save.data.piCompleted = true;
+		save.flush();
 	}
 }
 

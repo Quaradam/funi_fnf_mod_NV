@@ -3,7 +3,7 @@ import lime.app.Application;
 var oldTitle = Application.current.window.title;
 
 function onCreatePost() {
-  Application.current.window.title = "Any Job Works - " + oldTitle;
+  Application.current.window.title = oldTitle + " - Any Job Works";
 }
 
 

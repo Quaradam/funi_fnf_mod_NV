@@ -42,7 +42,7 @@ function onBeatHit() {
   }
 }
 function onCreatePost() {
-  Application.current.window.title = "Burnt or Slit - " + oldTitle;
+  Application.current.window.title = oldTitle + " - Burnt or Slit";
 }
 
 function onUpdatePost(elapsed:Float) {

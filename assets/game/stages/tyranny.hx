@@ -73,7 +73,7 @@ function onLoad() { //bg shot
 
 
 function onCreatePost() {
-    Application.current.window.title = "Tyranny - " + oldTitle;
+    Application.current.window.title = oldTitle + " - Tyranny";
 
     GameOverSubstate.deathSoundName = 'smtg/empty';
     GameOverSubstate.loopSoundName = 'smtg/empty';

@@ -30,7 +30,7 @@ function onCreatePost(){
    camGame.filters = [f1];
    camHUD.filters = [f1];
 
-   Application.current.window.title = "Fallen to Fakery - " + oldTitle;
+   Application.current.window.title = oldTitle + " - Fallen to Fakery";
 
    camHUD.zoom = 0.9;
    camHUD.alpha = 1;

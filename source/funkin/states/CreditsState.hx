@@ -90,7 +90,7 @@ class CreditsState extends MusicBeatState
 			],
 			['Lolq', 'lolq', 'Inst for Tyranny', '', '0xffffff'
 			],
-			['!Itz_D@1BoiH3r3!', 'datboi', 'add Vocals for Fallen to Fakey creator\n Propher', '', '0xffffff'
+			['!Itz_D@1BoiH3r3!', 'datboi', 'Fallen to Fakery composer', '', '0xffffff'
 			],
 			['Coral', 'coral', 'Charted Tyranny', '', '0xffffff'
 			],

@@ -3347,6 +3347,11 @@ class PlayState extends MusicBeatState
 				var percent:Float = ratingPercent;
 				if (Math.isNaN(percent)) percent = 0;
 				Highscore.saveScore(SONG.song, songScore, storyDifficulty, percent);
+				
+				// Check if we completed the song that unlocks pi
+				if (SONG.song.toLowerCase() == 'pi') {
+					funkin.states.FreeplayState.unlockPiSong();
+				}
 				#end
 			}
 			
