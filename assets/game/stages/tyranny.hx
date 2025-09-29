@@ -17,6 +17,7 @@ function startCountdown():Void {
 function onSongStart() {
     camHUD.visible = false;
     lockCamera = true;
+    //modManager.setValue('transformX', 256, 128);
 }
 
 function onLoad() { //bg shot
@@ -86,10 +87,16 @@ function onCreatePost() {
 
 function onBeatHit():Void {
     if (curBeat == 0) {
-        camZooming = false;
+        defaultCamZoom = 0.85;
+        camZooming = true;
         lockCamera = true;
-        speed = 4;
+        speed = 111111111;
         zoom = -1;
+    }
+    if (curBeat == 22) {
+        defaultCamZoom = 1.4;
+        speed = 111111111;
+        zoom = 1;
     }
 
     if (curBeat == 28) {

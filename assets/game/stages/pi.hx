@@ -27,7 +27,6 @@ function onCreatePost() {
    vedeo = new FunkinVideoSprite();
    vedeo.onFormat(()->{
       vedeo.setGraphicSize(0, 0);
-      vedeo.scale.set(1, 1);
       vedeo.updateHitbox();
       vedeo.screenCenter();
       vedeo.cameras = [camHUD];

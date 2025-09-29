@@ -102,7 +102,7 @@ class CreditsState extends MusicBeatState
 			],
 			['Powercord', 'thanks', 'ring in FPMenu', '', '0Xffffff'
 			],
-			['QRDM', 'qrdm', 'Ported this to Nightmare Vision Engine\n + custom events\n Fallen to Fakery chart\n also i played 50+ H on DELTARUNE', '', '0Xffffff'
+			['QRDM', 'qrdm', 'Coder\n Fallen to Fakery chart\n also i played 50+ H on DELTARUNE', '', '0Xffffff'
 			],
 			['Fredy', 'thanks', 'Chart for AJW', '', '0Xffffff'
 			],
@@ -110,8 +110,178 @@ class CreditsState extends MusicBeatState
 			],
 			['Mcoleman', 'Mike', 'Made the vocals for Tryanny and help on Tryanny chart', '', '#463fb3'
 			],
-			[ 'Tailskid', 'thanks', 'menu and credits music', '', '0Xffffff'
+			[ 'Tailskid', 'tailsk', 'menu and credits music', '', '0Xffffff'
 			],
+
+			[''],
+
+			['NIGHTMARISH FEDS'],
+			[
+				'DuskieWhy',
+				'NVCREDITS/duskie',
+				'Main Developer',
+				'https://twitter.com/DuskieWhy',
+				'0x1BA4E3'
+			],
+			['Data', 'NVCREDITS/data', 'Programmer', 'https://twitter.com/FixedData', '0xFFAF64'],
+			[
+				'NebulaZorua',
+				'NVCREDITS/neb',
+				'Creator of the Psych Engine fork NMV is based off, Made the Modchart backend',
+				'https://twitter.com/Nebula_Zorua',
+				'0xB300B3'
+			],
+			[
+				'JoggingScout',
+				'NVCREDITS/joggingscout',
+				'Artist (SUPER KUTTY!!!!)',
+				'https://twitter.com/JoggingScout',
+				'0x3366CC'
+			],
+			[
+				'Iseta',
+				'NVCREDITS/iseta',
+				'Artist (a little less kutty...)',
+				'https://twitter.com/Isetaaaaa',
+				'0x6ede0b'
+			],
+			[''],
+			['Special Thanks'],
+			[
+				'Infry',
+				'NVCREDITS/infry',
+				'Made little buddies for the chart editor',
+				'https://twitter.com/Isetaaaaa',
+				'0x8d00df'
+			],
+			['PurpleKav', 'NVCREDITS/purple', 'made the other little guys in the chart editor', 'https://twitter.com/PurpleKav', '0xFF9632a8'],
+			[
+				'Rozebud',
+				'NVCREDITS/rozebud',
+				'Made the original chart little buddies',
+				'https://twitter.com/Isetaaaaa',
+				'0x800000'
+			],
+			[
+				'riconuts',
+				'NVCREDITS/riconuts',
+				'Made the stage implementation setup',
+				'https://twitter.com/Isetaaaaa',
+				'0x700b98'
+			],
+			['Lethrial', 'NVCREDITS/leth', 'fixed a couple bugs', 'https://twitter.com/lethrial', '0xFF32a852'],
+			['Iceptual', 'NVCREDITS/ice', 'also fixed a couple bugs', 'https://x.com/iceptual', '0xFFa86132'],
+			['Aqua', 'NVCREDITS/aqua', 'also also helped with bugs, stupid and doesnt have an icon', 'https://x.com/theuseraqua', '0x5833B6'],
+			['Ito Saihara', 'NVCREDITS/ito', 'my friend', 'https://x.com/ItoSaihara_', '0xFFc73c3c'],
+			['Decoy', 'NVCREDITS/decoy', 'helped with bugs, day one nmv supporter', 'https://www.youtube.com/watch?v=PuYZ-9zcp4w', '0x5833B6'],
+			['PHO', 'NVCREDITS/pho', 'help with extra keys', 'https://twitter.com/Phomow1', '0x7455be'],
+			['Logo Contributors', 'NVCREDITS/thanks', 'thank u grossalicious, marco antonio, joggingscout & tgg for making logos i love u mwah mwah', 'https://www.youtube.com/watch?v=ZFnizww3JJg', '0xFF7d7d7d'],
+			['External Contributors', 'NVCREDITS/thanks', 'thank u crossknife for the move songs batch file, thank you wrathstetic for the intro logo sound effect, thank u orbyyorbinaut for the pixel KUTTY rating', 'https://www.youtube.com/watch?v=ZFnizww3JJg', '0xFF7d7d7d'],
+			['Psych Engine Team'],
+			[
+				'Shadow Mario',
+				'NVCREDITS/shadowmario',
+				'Main Programmer of Psych Engine',
+				'https://twitter.com/Shadow_Mario_',
+				'0x444444'
+			],
+			[
+				'RiverOaken',
+				'NVCREDITS/riveroaken',
+				'Main Artist/Animator of Psych Engine',
+				'https://twitter.com/RiverOaken',
+				'0xC30085'
+			],
+			[''],
+			['Former Psych Members'],
+			[
+				'bb-panzu',
+				'NVCREDITS/bb-panzu',
+				'Ex-Programmer of Psych Engine',
+				'https://twitter.com/bbsub3',
+				'0x389A58'
+			],
+			[''],
+			['Engine Contributors'],
+			[
+				"crowplexus",
+				"NVCREDITS/crowplexus",
+				"Creator of HScript-Iris and various PR's",
+				"https://twitter.com/crowplexus",
+				"0xCFCFCF"
+			],
+			[
+				'iFlicky',
+				'NVCREDITS/iflicky',
+				'Composer of Psync and Tea Time\nMade the Dialogue Sounds',
+				'https://twitter.com/flicky_i',
+				'0xAA32FE'
+			],
+			[
+				'SqirraRNG',
+				'NVCREDITS/sqirra',
+				'Chart Editor\'s Sound Waveform base',
+				'https://x.com/sqirradotdev',
+				'0xFF9300'
+			],
+			[
+				'MAJigsaw77',
+				'NVCREDITS/majigsaw',
+				'Video Playback support',
+				'https://x.com/MAJigsaw77',
+				'0x6E6E6E'
+			],
+			[
+				'Keoiki',
+				'NVCREDITS/keoiki',
+				'Note Splash Animations',
+				'https://twitter.com/Keoiki_',
+				'0xFFFFFF'
+			],
+			[
+				'Smokey',
+				'NVCREDITS/smokey',
+				'Spritemap Texture Support',
+				'https://twitter.com/Smokey_5_',
+				'0x4D5DBD'
+			],
+			[''],
+			["Funkin' Crew"],
+			[
+				'ninjamuffin99',
+				'NVCREDITS/ninjamuffin99',
+				"Programmer of Friday Night Funkin'",
+				'https://twitter.com/ninja_muffin99',
+				'0xF73838'
+			],
+			[
+				'eliteMasterEric',
+				'NVCREDITS/mastereric',
+				"Programmer of Friday Night Funkin'",
+				'https://twitter.com/ninja_muffin99',
+				'0xF73838'
+			],
+			[
+				'PhantomArcade',
+				'NVCREDITS/phantomarcade',
+				"Animator of Friday Night Funkin'",
+				'https://twitter.com/PhantomArcade3K',
+				'0xFFBB1B'
+			],
+			[
+				'evilsk8r',
+				'NVCREDITS/evilsk8r',
+				"Artist of Friday Night Funkin'",
+				'https://twitter.com/evilsk8r',
+				'0x53E52C'
+			],
+			[
+				'kawaisprite',
+				'NVCREDITS/kawaisprite',
+				"Composer of Friday Night Funkin'",
+				'https://twitter.com/kawaisprite',
+				'0x6475F3'
+			]
 		];
 		
 		creditsStuff = creditsStuff.concat(pisspoop);

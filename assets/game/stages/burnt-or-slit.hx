@@ -28,7 +28,7 @@ function onBeatHit() {
   if (curBeat >= 72 && curBeat < 72 + 4) {
     camHUD.flash(0xFF9F0000, 0.35);
     camGame.zoom = 1.7;
-    camHUD.zoom = 2;
+    camHUD.zoom = 1.4;
   }
   if (curBeat == 76) {
     speed = 1;
