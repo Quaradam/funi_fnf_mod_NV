@@ -120,17 +120,16 @@ class FreeplayState extends MusicBeatState
 			add(bg);
 			bg.screenCenter();
 
-			rupert = new FlxSprite(-100, 0);
-			rupert.loadGraphic(Paths.image('fppng/ring'));
-			rupert.scale.set(1.3, 1.3);
-			rupert.updateHitbox();
-			rupert.y = (FlxG.height * 0.5) - (rupert.height / 2); // Center vertically
-			rupert.scale.set(1.3, 1.3);
-			rupert.angle = 0;
+			//ring spinning
+			rupert = new FlxSprite(325, 0);
+			rupert.frames = Paths.getSparrowAtlas('fppng/ring');
+			rupert.animation.addByPrefix('spin', 'ring spin', 10, true);
+			rupert.animation.play('spin');
+			rupert.scale.set(0.65, 0.65);
 			rupert.antialiasing = ClientPrefs.globalAntialiasing;
-			rupert.screenCenter(X); // Center horizontally
 			add(rupert);
-			rupert.visible = true;
+			
+			
 
 			//bf standing here bro im loosing my mind
 			//if
@@ -325,14 +324,6 @@ class FreeplayState extends MusicBeatState
 			scoreText.text = 'PERSONAL BEST: ' + lerpScore + ' (' + ratingSplit.join('.') + '%)';
 			positionHighscore();
 			
-			// Update ring position to center with the current song text
-			for (item in grpSongs.members) {
-				if (item.ID == curSelected) {
-					rupert.x = item.x + (item.width / 2) - (rupert.width / 2);
-					break;
-				}
-			}
-			
 			var shiftMult:Int = 1;
 			if (FlxG.keys.pressed.SHIFT) shiftMult = 3;
           	
@@ -519,32 +510,6 @@ class FreeplayState extends MusicBeatState
 			if (playSound) FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
 			
 			curSelected = FlxMath.wrap(curSelected + change, 0, songs.length -1);
-			
-			// Update ring position with animation
-			if (change != 0) {
-				FlxTween.cancelTweensOf(rupert);
-				
-				// Find the currently selected text item
-				var selectedItem:FlxText = null;
-				for (item in grpSongs.members) {
-					if (item.ID == curSelected) {
-						selectedItem = cast item;
-						break;
-					}
-				}
-				
-				if (selectedItem != null) {
-					// Calculate target position to center with the text
-					var targetX:Float = selectedItem.x + (selectedItem.width / 2) - (rupert.width / 2);
-					
-					// Smoothly move the ring to the target position
-					FlxTween.tween(rupert, {
-						x: targetX
-					}, 0.3, {
-						ease: FlxEase.quartOut
-					});
-				}
-			}
 			
 			var newColor:Int = songs[curSelected].color;
 			if (newColor != intendedColor)
