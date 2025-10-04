@@ -3,101 +3,101 @@
 		{
 			"loop": false,
 			"offsets": [
-				314,
-				170
-			],
-			"anim": "idle",
-			"fps": 12,
-			"name": "OGX Idle",
-			"indices": []
-		},
-		{
-			"offsets": [
 				220,
 				213
 			],
-			"loop": false,
-			"fps": 12,
 			"anim": "singLEFTmiss",
-			"indices": [],
-			"name": "OGX Left MISS"
+			"fps": 12,
+			"name": "OGX Left MISS",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				275,
 				208
 			],
-			"loop": false,
-			"fps": 12,
 			"anim": "singDOWNmiss",
-			"indices": [],
-			"name": "OGX Down MISS"
+			"fps": 12,
+			"name": "OGX Down MISS",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				330,
 				220
 			],
-			"loop": false,
-			"fps": 12,
 			"anim": "singRIGHTmiss",
-			"indices": [],
-			"name": "OGX Right MISS"
+			"fps": 12,
+			"name": "OGX Right MISS",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				282,
 				215
 			],
-			"loop": false,
-			"fps": 12,
 			"anim": "singUPmiss",
-			"indices": [],
-			"name": "OGX Up MISS"
+			"fps": 12,
+			"name": "OGX Up MISS",
+			"indices": []
 		},
 		{
-			"loop": false,
 			"offsets": [
 				300,
 				160
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 12,
-			"name": "OGX Down0",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "OGX Down0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				290,
 				180
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 12,
-			"name": "OGX Up0",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "OGX Up0"
 		},
 		{
+			"loop": false,
 			"offsets": [
 				275,
 				166
 			],
-			"loop": false,
-			"fps": 12,
 			"anim": "singRIGHT",
-			"indices": [],
-			"name": "OGX Right0"
+			"fps": 12,
+			"name": "OGX Right0",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				330,
 				170
 			],
-			"loop": false,
-			"fps": 12,
 			"anim": "singLEFT",
+			"fps": 12,
+			"name": "OGX Left0",
+			"indices": []
+		},
+		{
+			"offsets": [
+				314,
+				170
+			],
+			"loop": true,
+			"fps": 12,
+			"anim": "idle",
 			"indices": [],
-			"name": "OGX Left0"
+			"name": "OGX Idle"
 		}
 	],
 	"no_antialiasing": false,
@@ -115,7 +115,7 @@
 	],
 	"camera_position": [
 		170,
-		-40
+		0
 	],
 	"sing_duration": 4,
 	"scale": 0.6

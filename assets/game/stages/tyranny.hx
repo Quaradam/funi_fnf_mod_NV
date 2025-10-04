@@ -107,7 +107,7 @@ function onBeatHit():Void {
     }
 
     if (curBeat == 32) {
-        defaultCamZoom = 0.9
+        defaultCamZoom = 0.9;
         speed = 1;
         zoom = 1.65;
     }
