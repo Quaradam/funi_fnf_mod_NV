@@ -17,6 +17,7 @@ function startCountdown():Void {
 function onSongStart() {
     camHUD.visible = false;
     lockCamera = true;
+    cameraSpeed = 3;
     //modManager.setValue('transformX', 256, 128);
 }
 
@@ -104,6 +105,7 @@ function onBeatHit():Void {
         lockCamera = false;
         camHUD.visible = true;
         FlxTween.tween(camHUD,{alpha: 1}, 1.5, {ease: FlxEase.quadOut});
+        cameraSpeed = 1;
     }
 
     if (curBeat == 32) {

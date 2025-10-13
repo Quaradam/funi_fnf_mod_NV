@@ -26,6 +26,12 @@ var revealBeat:Int = 8;
 var finalText:String = "Fallen to Fakery";
 var revealedChars:Int = 0;
 var charsPerBeat:Int = 2; // How many characters to reveal per beat // Change this to the beat where you want the text to stop scrambling
+//var healthBar.upToDown = true;
+
+// Stage-level control for vertical icons
+var iconAnchorX:Float = 0;
+var enableVerticalHealth:Bool = true;
+
 
 var shader = newShader("warp");
 //var chromatic = newShader("chrom");
@@ -39,6 +45,7 @@ function onSongStart() {
    camGame.angle = 0;
    speed = 11111111;
    zoom = 1;
+   cameraSpeed = 3;
 
 }
 
@@ -48,7 +55,6 @@ function onCreatePost(){
 
    skipCountdown = true;
 
-   
    camHUD.zoom = 0.9;
    camHUD.alpha = 1;
    defaultHudZoom = 0.9;
@@ -61,14 +67,25 @@ function onCreatePost(){
    text.alpha = 0;
    add(text);
 
-   healthBar.angle = 90;
-   healthBar.x = FlxG.width - healthBar.width - 900;
-   healthBar.y = FlxG.height / 2.1 - healthBar.height / 2.1;
-   
-   iconP1.x = healthBar.x;
-   iconP1.y = healthBar.y;
-   iconP2.x = healthBar.x;
-   iconP2.y = healthBar.y;
+   // --- Vertical healthbar setup ---
+   if (enableVerticalHealth && healthBar != null) {
+      // Rotate so the bar appears vertical
+      healthBar.angle = 90;
+      // Position near right edge and center vertically
+      healthBar.x = FlxG.width - 120;
+      healthBar.y = (FlxG.height / 2) - (healthBar.width / 2);
+
+      // Anchor icons a bit to the right of the bar
+      iconAnchorX = healthBar.x + 60;
+
+      // Leave icons upright (set to 90 if you want them rotated)
+      iconP1.angle = 0;
+      iconP2.angle = 0;
+
+      // Set initial X positions; Y will be updated each frame
+      iconP1.x = iconAnchorX;
+      iconP2.x = iconAnchorX;
+   }
 
    modManager.setValue("tipsy", 0.3);
    modManager.setValue('reverse', 1, 0);
@@ -178,20 +195,21 @@ function onBeatHit():Void {
    }
    if (curBeat == 16) {
       //modManager.setValue('tipsySpeed', 5);
-
-     speed = 1;
-     zoom = 1.3;
-     defaultHudZoom = 0.9;
-     defaultCamZoom = 1.2;
-     isAnimating = false;
-     revealedChars = finalText.length;
-     Application.current.window.title = oldTitle + " - " + finalText;
+      cameraSpeed = 1;
+      speed = 1;
+      zoom = 1.3;
+      defaultHudZoom = 0.9;
+      defaultCamZoom = 1.2;
+      isAnimating = false;
+      revealedChars = finalText.length;
+      Application.current.window.title = oldTitle + " - " + finalText;
    }
    if (curBeat == 80) {
       camZooming = true;
       FlxTween.tween(camHUD,{alpha: 0}, 0.7, {ease: FlxEase.quadOut});
       //FlxTween.tween(camGame,{zoom: 1.9}, 8, {ease: FlxEase.quadOut});
 
+      cameraSpeed = 1;
       FlxTween.tween(FlxG.camera, {zoom: 2}, 8);
       speed = 111111111;
       zoom = 1;
@@ -267,6 +285,24 @@ function onUpdatePost(elapsed:Float) {
    if (lockCamera) {
       camGame.zoom = 0.9;
       camHUD.zoom = 0.9;
+   }
+   // Reposition icons to follow the vertical healthbar
+   if (enableVerticalHealth && healthBar != null) {
+      // percent is 0..100
+      var pct:Float = healthBar.percent / 100.0;
+
+      // Height along the rotated bar equals its width property
+      var barLen:Float = healthBar.width - healthBar.barOffset.x * 2;
+
+      var yTop:Float = healthBar.y + healthBar.barOffset.y;
+      var yBottom:Float = yTop + barLen;
+
+      // Interpolate so 0% is bottom and 100% is top
+      var iconY:Float = FlxMath.lerp(yBottom, yTop, pct);
+
+      // Offsets so icons sit a little away from the bar
+      iconP1.y = Std.int(iconY + 36);
+      iconP2.y = Std.int(iconY - 36);
    }
 }
 function onDestroy() {
