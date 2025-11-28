@@ -80,6 +80,8 @@ function onCreatePost() {
     GameOverSubstate.loopSoundName = 'smtg/empty';
     GameOverSubstate.endSoundName = 'smtg/empty';
     camHUD.alpha = 0;
+
+    botplayTxt.text = 'IM GONNA GECHA!!';
     
 }
 

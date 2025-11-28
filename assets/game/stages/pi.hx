@@ -20,9 +20,18 @@ function onLoad() {
 }
 
 function onCreatePost() {
+   
+   dad.visible = false;
+   boyfriend.visible = false;
+   gf.visible = false;
 
-    modManager.setValue('alpha', 1, 1);
-    modManager.setValue('opponentSwap', 0);
+   
+   botplayTxt.text = "WHAT ARE YOU DOING HERE??";
+   modManager.setValue('alpha', 1, 1);
+   modManager.setValue('opponentSwap', 0.5);
+   modManager.setValue('flip', -0.5);
+
+   
 
    vedeo = new FunkinVideoSprite();
    vedeo.onFormat(()->{
@@ -36,11 +45,19 @@ function onCreatePost() {
    add(vedeo);
    skipCountdown = true;
    for (note in notes) {
-    note.visible = true;
-    note.alpha = 1;
+      note.visible = true;
+      note.alpha = 1;
    }
    for (strum in playerStrums) {
     strum.visible = true;
     strum.alpha = 1;
    }
+}
+
+function numericForInterval(start, end, interval, func){
+    var index = start;
+    while(index < end){
+        func(index);
+        index += interval;
+    }
 }

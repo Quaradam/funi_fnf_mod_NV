@@ -1,0 +1,77 @@
+function onCreatePost(){
+    modManager.queueSet(13, 'opponentSwap', 1);
+	modManager.queueSet(13, 'reverse', 1);
+	modManager.queueSet(0, 'centerrotateZ', 0);
+	modManager.queueEase(0, 13, 'centerrotateZ', -Math.PI, 'quadInOut');
+	modManager.queueSet(13, 'centerrotateZ', 0);
+	modManager.queueSet(13, 'flip', 0);
+	
+	
+	
+
+	//modManager.setValue('Scroll', 1);
+	
+
+	var counter = -1;
+		numericForInterval(432, 1280, 4, (step)->{
+        counter *= -1;
+		
+		modManager.setValue("drunkOffset", -1);
+        modManager.queueSet(step, "mini", -0.5);
+        modManager.queueEase(step, step + 4, "mini", 0, "quintOut");
+        modManager.queueSet(step, "drunk", -2 * counter);
+        modManager.queueEase(step, step + 4, "drunk", 0, "quintOut");
+
+
+        modManager.queueSet(step + 4, "mini", -0.5);
+        modManager.queueEase(step + 4, step + 8, "mini", 0, "quintOut");
+        modManager.queueSet(step + 4, "tipsy", 2 * counter);
+        modManager.queueEase(step + 4, step + 8, "tipsy", 0, "quintOut");
+        modManager.queueSet(step + 4, "drunk", 2 * counter);
+        modManager.queueEase(step + 4, step + 8, "drunk", 0, "quintOut");
+		modManager.queueEase(step + 1, 'beat', 0.5, 'quadInOut');
+		modManager.queueSet(step + 4, "beat", 0.5 * counter);
+		modManager.queueEase(step + 4, 'beat', -0.5, 'quadInOut');
+		modManager.queueSet(step + 1, "beat", -0.5 * counter);
+		
+    });
+
+	
+	modManager.queueSet(1280,'transformX', 0);
+	modManager.queueSet(1280,'transformY', 0);
+
+	modManager.queueSet(1281,'beat', 0);
+	var counter2:Int = 0;
+	numericForInterval(432, 1280, 4, function(step){
+
+		if(counter == 0){
+                    for(i in 0...4){
+                    modManager.queueSet(step, "transform"+ i + "Y",  30);
+                    modManager.queueEase(step, step + 2, "transform" + i + "Y", -30, 'quadOut');
+                    
+                    }
+                    counter = 1;
+                    }else{
+                    for(i in 0...4){
+                    modManager.queueEase(step, step + 2, "transform" + i + "Y", 0, 'quadIn');
+                                        }
+                    counter = 0;
+                    }
+
+		if(counter2 == 0){
+                        modManager.queueEase(step, step + 4, "opponentSwap", 1 + 0.05);
+                        counter2 = 1;
+                    }else{
+                        modManager.queueEase(step, step + 4, "opponentSwap", 1 + -0.05);
+                        counter2 = 0;
+                    }
+	});
+    modManager.queueEase(2250, 2268, 'alpha', 1, 'cubicInOut');
+}
+function numericForInterval(start, end, interval, func){
+    var index = start;
+    while(index < end){
+        func(index);
+        index += interval;
+    }
+}
